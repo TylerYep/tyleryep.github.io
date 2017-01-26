@@ -1,0 +1,160 @@
+/* ------------------------------------------------------------------ *\
+    Overall HTML
+\* ------------------------------------------------------------------ */
+
+html, body {
+    height: 100%;
+    font-size: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* ------------------------------------------------------------------ *\
+    Header
+\* ------------------------------------------------------------------ */
+
+header {
+    position: relative;
+    z-index: 10;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 2%;
+}
+
+header ul li {
+    line-height: 1em;
+    color: black;
+    font-size: 2em;
+    text-align: center;
+    display: inline;
+    padding: 2%;
+}
+
+li a {
+    color: inherit;
+}
+
+li .active {
+    font-size: 120%;
+}
+
+li a:hover:not(.active) {
+    text-decoration: none;
+    color: black;
+    text-shadow: 0px 0px 1px black
+}
+
+
+/* ------------------------------------------------------------------ *\
+    Home Page
+\* ------------------------------------------------------------------ */
+
+.home {
+    height: 100%;
+    width: 100%;
+    background-image: url('sky.png');
+    background-size: cover;
+}
+
+.home h1 {
+    position: relative;
+    font-size: 6em;
+    font-size: 7vw;
+    font-weight: bold;
+    margin: 0%;
+    top: 30%;
+    padding-left: 12%;
+    padding-right: 20%;
+    z-index: 5;
+}
+
+.sun {
+    position: absolute;
+    left: 70%;
+    top: 30%;
+    width: 15%;
+    z-index: 1;
+}
+
+.treehills {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    z-index: 2;
+}
+
+/* ------------------------------------------------------------------ *\
+    About Page
+\* ------------------------------------------------------------------ */
+
+.about {
+    height: 100%;
+    width: 100%;
+    background-image: url('sky.png');
+    background-size: cover;
+}
+
+.about h1 {
+    color: black;
+    position: relative;
+    font-size: 4em;
+    font-size: 4vw;
+    margin: 0%;
+    top: 15%;
+    padding-left: 12%;
+    padding-right: 20%;
+    z-index: 5;
+}
+
+/* ------------------------------------------------------------------ *\
+    Projects Page
+\* ------------------------------------------------------------------ */
+
+.projects {
+    height: 100%;
+    width: 100%;
+    background-image: url('sky.png');
+    background-size: cover;
+}
+
+.projects h1 {
+    color: black;
+    position: relative;
+    font-size: 4em;
+    font-size: 4vw;
+    margin: 0%;
+    top: 15%;
+    padding-left: 12%;
+    padding-right: 20%;
+    z-index: 5;
+}
+
+/* ------------------------------------------------------------------ *\
+    Contact Page
+\* ------------------------------------------------------------------ */
+
+.contact {
+    height: 100%;
+    width: 100%;
+    background-image: url('sky.png');
+    background-size: cover;
+}
+
+.contact h1 {
+    color: black;
+    position: relative;
+    font-size: 4em;
+    font-size: 4vw;
+    margin: 0%;
+    top: 15%;
+    padding-left: 12%;
+    padding-right: 20%;
+    z-index: 5;
+}
