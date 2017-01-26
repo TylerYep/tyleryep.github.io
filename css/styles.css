@@ -57,7 +57,7 @@ li a:hover:not(.active) {
 .home {
     height: 100%;
     width: 100%;
-    background-image: url('sky.png');
+    background-image: url('../img/sky.png');
     background-size: cover;
 }
 
@@ -97,7 +97,7 @@ li a:hover:not(.active) {
 .about {
     height: 100%;
     width: 100%;
-    background-image: url('sky.png');
+    background-image: url('../img/sky.png');
     background-size: cover;
 }
 
@@ -120,7 +120,7 @@ li a:hover:not(.active) {
 .projects {
     height: 100%;
     width: 100%;
-    background-image: url('sky.png');
+    background-image: url('../img/sky.png');
     background-size: cover;
 }
 
@@ -143,7 +143,7 @@ li a:hover:not(.active) {
 .contact {
     height: 100%;
     width: 100%;
-    background-image: url('sky.png');
+    background-image: url('../img/sky.png');
     background-size: cover;
 }
 
