@@ -113,6 +113,17 @@ li a:hover:not(.active) {
     z-index: 5;
 }
 
+.about p {
+    color: black;
+    position: relative;
+    font-size: 2em;
+    font-size: 2vw;
+    top: 25%;
+    padding-left: 12%;
+    padding-right: 40%;
+    z-index: 4;
+}
+
 /* ------------------------------------------------------------------ *\
     Projects Page
 \* ------------------------------------------------------------------ */
