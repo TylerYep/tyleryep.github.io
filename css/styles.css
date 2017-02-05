@@ -77,8 +77,8 @@ li a:hover:not(.active) {
     position: absolute;
     left: 70%;
     top: 30%;
-    width: 15%;
-    z-index: 1;
+    width: 10%;
+    z-index: 2;
 }
 
 .treehills {
@@ -87,7 +87,7 @@ li a:hover:not(.active) {
     top: 0;
     width: inherit;
     height: inherit;
-    z-index: 2;
+    z-index: 3;
 }
 
 /* ------------------------------------------------------------------ *\
@@ -124,6 +124,16 @@ li a:hover:not(.active) {
     z-index: 4;
 }
 
+.about img{
+    position: absolute;
+    top: 125%;
+    left: 65%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
 /* ------------------------------------------------------------------ *\
     Projects Page
 \* ------------------------------------------------------------------ */
@@ -154,12 +164,12 @@ li a:hover:not(.active) {
 .contact {
     height: 100%;
     width: 100%;
-    background-image: url('../img/sky.png');
+    background-image: url('../img/black-gradient.png');
     background-size: cover;
 }
 
 .contact h1 {
-    color: black;
+    color: white;
     position: relative;
     font-size: 4em;
     font-size: 4vw;
