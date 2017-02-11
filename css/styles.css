@@ -141,12 +141,12 @@ li a:hover:not(.active) {
 .projects {
     height: 100%;
     width: 100%;
-    background-image: url('../img/sky.png');
+    background-image: url('../img/underground.png');
     background-size: cover;
 }
 
 .projects h1 {
-    color: black;
+    color: white;
     position: relative;
     font-size: 4em;
     font-size: 4vw;
