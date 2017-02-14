@@ -21,6 +21,7 @@ header {
 }
 
 header ul {
+
     list-style-type: none;
     margin: 0;
     padding: 2.5%;
@@ -40,9 +41,23 @@ li a {
     color: inherit;
 }
 
-li .active {
-    font-size: 120%;
+header #buttons {
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
 }
+
+header #buttons li {
+    display: inline;
+    padding: 0%;
+}
+
+/*li a .active {
+    font-size: 120%;
+}*/
 
 li a:hover:not(.active) {
     text-decoration: none;
@@ -68,8 +83,8 @@ li a:hover:not(.active) {
     font-size: 7vw;
     font-weight: bold;
     margin: 0%;
-    top: 30%;
-    padding-left: 12%;
+    top: 28%;
+    padding-left: 14%;
     padding-right: 20%;
     z-index: 5;
 }
