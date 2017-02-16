@@ -1,3 +1,18 @@
+function getTime() {
+    var currentTime = new Date().getHours();
+    if (0 <= currentTime && currentTime < 5) {
+        changeBackground("night");
+    } else if (5 <= currentTime && currentTime < 8) {
+        changeBackground("sunrise");
+    } else if (16 <= currentTime && currentTime < 19) {
+        changeBackground("sunset");
+    } else if (19 <= currentTime && currentTime <= 24) {
+        changeBackground("night");
+    }
+}
+
+getTime();
+
 document.getElementById("sunrisebutton").addEventListener("click", function() {
     changeBackground("sunrise");
     removeSun();

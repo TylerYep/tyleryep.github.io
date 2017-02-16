@@ -199,3 +199,8 @@ li a:hover:not(.active) {
     padding-right: 20%;
     z-index: 5;
 }
+
+.contact #github {
+    margin-left: 46%;
+    margin-top: 40%;
+}
