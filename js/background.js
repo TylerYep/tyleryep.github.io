@@ -1,34 +1,41 @@
+getTime();
+document.getElementById("sunrisebutton").addEventListener("click", function() {
+    changeBackground("sunrise");
+    removeMoon();
+    removeSun();
+});
+document.getElementById("sunbutton").addEventListener("click", function() {
+    changeBackground("sun");
+    removeMoon();
+    bringSun();
+});
+document.getElementById("sunsetbutton").addEventListener("click", function() {
+    changeBackground("sunset");
+    removeSun();
+    removeMoon();
+});
+document.getElementById("nightbutton").addEventListener("click", function() {
+    changeBackground("night");
+    removeSun();
+    bringMoon();
+});
+
 function getTime() {
     var currentTime = new Date().getHours();
     if (0 <= currentTime && currentTime < 5) {
         changeBackground("night");
+        bringMoon();
     } else if (5 <= currentTime && currentTime < 8) {
         changeBackground("sunrise");
     } else if (16 <= currentTime && currentTime < 19) {
         changeBackground("sunset");
     } else if (19 <= currentTime && currentTime <= 24) {
         changeBackground("night");
+        bringMoon();
+    } else {
+        bringSun();
     }
 }
-
-getTime();
-
-document.getElementById("sunrisebutton").addEventListener("click", function() {
-    changeBackground("sunrise");
-    removeSun();
-});
-document.getElementById("sunbutton").addEventListener("click", function() {
-    changeBackground("sun");
-    bringSun();
-});
-document.getElementById("sunsetbutton").addEventListener("click", function() {
-    changeBackground("sunset");
-    removeSun();
-});
-document.getElementById("nightbutton").addEventListener("click", function() {
-    changeBackground("night");
-    bringSun();
-});
 
 function changeBackground(button) {
     var homePage = document.getElementById("home");
@@ -49,11 +56,21 @@ function changeBackground(button) {
 }
 
 function removeSun() {
-    var sun = document.getElementById("sun")
-    sun.style.visibility="hidden";
+    var sun = document.getElementById("sun");
+    sun.style.top = "100%";
 }
 
 function bringSun() {
-    var sun = document.getElementById("sun")
-    sun.style.visibility="";
+    var sun = document.getElementById("sun");
+    sun.style.top = "30%";
+}
+
+function removeMoon() {
+    var moon = document.getElementById("moon");
+    moon.style.top = "100%";
+}
+
+function bringMoon() {
+    var moon = document.getElementById("moon");
+    moon.style.top = "30%";
 }
