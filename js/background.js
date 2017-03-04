@@ -1,23 +1,24 @@
 getTime();
+
 document.getElementById("sunrisebutton").addEventListener("click", function() {
-    changeBackground("sunrise");
     removeMoon();
-    removeSun();
+    sunriseSunset();
+    changeBackground("sunrise");
 });
 document.getElementById("sunbutton").addEventListener("click", function() {
-    changeBackground("sun");
     removeMoon();
     bringSun();
+    changeBackground("sun");
 });
 document.getElementById("sunsetbutton").addEventListener("click", function() {
-    changeBackground("sunset");
-    removeSun();
     removeMoon();
+    sunriseSunset();
+    changeBackground("sunset");
 });
 document.getElementById("nightbutton").addEventListener("click", function() {
-    changeBackground("night");
     removeSun();
     bringMoon();
+    changeBackground("night");
 });
 
 function getTime() {
@@ -57,7 +58,7 @@ function changeBackground(button) {
 
 function removeSun() {
     var sun = document.getElementById("sun");
-    sun.style.top = "100%";
+    sun.style.top = "70%";
 }
 
 function bringSun() {
@@ -67,10 +68,15 @@ function bringSun() {
 
 function removeMoon() {
     var moon = document.getElementById("moon");
-    moon.style.top = "100%";
+    moon.style.top = "70%";
 }
 
 function bringMoon() {
     var moon = document.getElementById("moon");
     moon.style.top = "30%";
+}
+
+function sunriseSunset() {
+    var sun = document.getElementById("sun");
+    sun.style.top = "60%";
 }
