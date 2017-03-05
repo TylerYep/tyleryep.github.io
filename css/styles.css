@@ -45,8 +45,7 @@ header #buttons {
     list-style-type: none;
     margin: 0;
     padding: 0%;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
+    padding-left: 5%;
 }
 
 header #buttons li {
@@ -68,7 +67,7 @@ li a:hover:not(.active) {
 .home {
     height: 100%;
     width: 100%;
-    background-image: url('../img/sky.png');
+    background-image: url('../img/sky.jpg');
     background-size: cover;
 }
 
@@ -118,7 +117,7 @@ li a:hover:not(.active) {
 .about {
     height: 100%;
     width: 100%;
-    background-image: url('../img/sky.png');
+    background-image: url('../img/sky.jpg');
     background-size: cover;
 }
 
@@ -164,7 +163,7 @@ li a:hover:not(.active) {
 .projects {
     height: 100%;
     width: 100%;
-    background-image: url('../img/underground.png');
+    background-image: url('../img/underground.jpg');
     background-size: cover;
 }
 
@@ -198,7 +197,7 @@ li a:hover:not(.active) {
 .contact {
     height: 100%;
     width: 100%;
-    background-image: url('../img/black-gradient.png');
+    background-image: url('../img/black-gradient.jpg');
     background-size: cover;
 }
 
