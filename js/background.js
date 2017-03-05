@@ -44,7 +44,7 @@ function changeBackground(button) {
     var homePage = document.getElementById("home");
     var header = document.getElementById("splash");
     if (button == "sunrise") {
-        homePage.style.backgroundImage = "url('img/sunrise.jpg')";
+        homePage.style.backgroundImage = "url('img/sunrise.png')";
         header.style.color = "inherit";
     } else if (button == "sun") {
         homePage.style.backgroundImage = "url('img/sky.png')";
