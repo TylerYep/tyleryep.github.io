@@ -28,8 +28,10 @@ function getTime() {
         bringMoon();
     } else if (5 <= currentTime && currentTime < 8) {
         changeBackground("sunrise");
+        sunriseSunset();
     } else if (16 <= currentTime && currentTime < 19) {
         changeBackground("sunset");
+        sunriseSunset();
     } else if (19 <= currentTime && currentTime <= 24) {
         changeBackground("night");
         bringMoon();
@@ -48,7 +50,7 @@ function changeBackground(button) {
         homePage.style.backgroundImage = "url('img/sky.png')";
         header.style.color = "inherit";
     } else if (button == "sunset") {
-        homePage.style.backgroundImage = "url('img/sunset.jpg')";
+        homePage.style.backgroundImage = "url('img/sunset.png')";
         header.style.color = "inherit";
     } else if (button == "night") {
         homePage.style.backgroundImage = "url('img/nightsky.jpg')";
