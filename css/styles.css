@@ -1,4 +1,115 @@
 /* ------------------------------------------------------------------ *\
+    Overall HTML
+\* ------------------------------------------------------------------ */
+
+html, body {
+    height: 100%;
+    font-size: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* ------------------------------------------------------------------ *\
+    Header
+\* ------------------------------------------------------------------ */
+
+header {
+    position: relative;
+    z-index: 10;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 2.5%;
+}
+
+header ul li {
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1em;
+    color: black;
+    font-size: 2em;
+    text-align: center;
+    display: inline;
+    padding: 3%;
+}
+
+li a {
+    color: inherit;
+}
+
+header #buttons {
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0%;
+    padding-left: 5%;
+}
+
+header #buttons li {
+    display: inline;
+    padding: 0%;
+}
+
+li a:hover:not(.active) {
+    text-decoration: none;
+    color: black;
+    text-shadow: 0px 0px 2px black
+}
+
+/* ------------------------------------------------------------------ *\
+    Home Page
+\* ------------------------------------------------------------------ */
+
+.home {
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/sky.jpg');
+    background-size: cover;
+}
+
+.home h1 {
+    position: relative;
+    font-size: 6em;
+    font-size: 7vw;
+    font-weight: bold;
+    margin: 0%;
+    top: 28%;
+    padding-left: 14%;
+    padding-right: 20%;
+    z-index: 5;
+}
+
+.sun {
+    position: absolute;
+    left: 75%;
+    top: 70%;
+    width: 10%;
+    z-index: 2;
+    transition: top 1.5s ease-in-out;
+}
+
+.moon {
+    position: absolute;
+    left: 75%;
+    top: 70%;
+    width: 10%;
+    z-index: 2;
+    transition: top 1.5s ease-in-out;
+}
+
+.treehills {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    z-index: 3;
+}
+
+/* ------------------------------------------------------------------ *\
     About Page
 \* ------------------------------------------------------------------ */
 
@@ -34,7 +145,7 @@
     z-index: 4;
 }
 
-.about img{
+.about img {
     position: absolute;
     top: 125%;
     left: 65%;
@@ -65,6 +176,19 @@
     margin: 0%;
     top: 15%;
     padding-left: 12%;
+    padding-right: 20%;
+    z-index: 5;
+}
+
+.projects h3 {
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    position: relative;
+    font-size: 2em;
+    font-size: 2vw;
+    margin: 0%;
+    top: 22%;
+    padding-left: 17%;
     padding-right: 20%;
     z-index: 5;
 }
