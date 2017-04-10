@@ -193,6 +193,11 @@ li a:hover:not(.active) {
     z-index: 5;
 }
 
+.projects h3 a {
+    color: white;
+    text-decoration: underline;
+}
+
 .centerProject {
     position: relative;
     left: 10%;
@@ -203,6 +208,11 @@ li a:hover:not(.active) {
     max-width: 50%;
     max-height: 50%;
     object-fit: cover;
+    opacity: 0.2;
+}
+
+.projects img:hover {
+    opacity: 0.8;
 }
 
 /* ------------------------------------------------------------------ *\
