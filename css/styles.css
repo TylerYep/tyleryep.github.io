@@ -157,6 +157,53 @@ li a:hover:not(.active) {
 }
 
 /* ------------------------------------------------------------------ *\
+    About Page
+\* ------------------------------------------------------------------ */
+
+.stuff {
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/stream.jpg');
+    background-size: cover;
+}
+
+.stuff h1 {
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    position: relative;
+    font-size: 4em;
+    font-size: 4vw;
+    margin: 0%;
+    top: 15%;
+    padding-left: 12%;
+    padding-right: 20%;
+    z-index: 5;
+}
+
+.stuff p {
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    position: relative;
+    font-size: 2em;
+    font-size: 2vw;
+    top: 25%;
+    padding-left: 12%;
+    padding-right: 40%;
+    z-index: 4;
+}
+
+.stuff img {
+    position: absolute;
+    top: 125%;
+    left: 65%;
+    width: auto;
+    height: auto;
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: cover;
+}
+
+/* ------------------------------------------------------------------ *\
     Projects Page
 \* ------------------------------------------------------------------ */
 
@@ -188,7 +235,7 @@ li a:hover:not(.active) {
     font-size: 2vw;
     margin: 0%;
     top: 22%;
-    padding-left: 17%;
+    padding-left: 14%;
     padding-right: 20%;
     z-index: 5;
 }
@@ -200,7 +247,7 @@ li a:hover:not(.active) {
 
 .centerProject {
     position: relative;
-    left: 10%;
+    left: 14%;
     margin-top: 12%;
     z-index: 2;
     width: auto;
