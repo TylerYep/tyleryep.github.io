@@ -13,7 +13,7 @@ html, body {
 
 h1, p {
     font-family: 'Ubuntu', sans-serif;
-    position: absolute;
+    position: relative;
     color: black;
     z-index: 5;
 }
@@ -23,7 +23,7 @@ h1, p {
 \* ------------------------------------------------------------------ */
 
 header {
-    position: absolute;
+    position: relative;
     z-index: 10;
 }
 
@@ -71,9 +71,10 @@ li a:hover:not(.active) {
 \* ------------------------------------------------------------------ */
 
 .home {
-    height: auto;
-    max-width: 100%;
-    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/sky.jpg');
+    background-size: cover;
 }
 
 .home h1 {
@@ -81,19 +82,9 @@ li a:hover:not(.active) {
     font-size: 7vw;
     font-weight: bold;
     margin: 0%;
-    top: 40%;
-    padding-left: 20%;
+    top: 28%;
+    padding-left: 14%;
     padding-right: 20%;
-    height: auto;
-    max-width: 100%;
-    display: block;
-}
-
-.home #sky {
-    height: auto;
-    max-width: 100%;
-    display: block;
-    position: relative;
 }
 
 .sun, .moon {
@@ -103,9 +94,6 @@ li a:hover:not(.active) {
     width: 10%;
     z-index: 2;
     transition: top 1.5s ease-in-out;
-    height: auto;
-    max-width: 100%;
-    display: block;
 }
 
 .treehills {
@@ -115,9 +103,6 @@ li a:hover:not(.active) {
     width: inherit;
     height: inherit;
     z-index: 3;
-    height: auto;
-    max-width: 100%;
-    display: block;
 }
 
 /* ------------------------------------------------------------------ *\
@@ -125,9 +110,10 @@ li a:hover:not(.active) {
 \* ------------------------------------------------------------------ */
 
 .about {
-    height: auto;
-    max-width: 100%;
-    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/sky.jpg');
+    background-size: cover;
 }
 
 .about h1 {
@@ -148,67 +134,84 @@ li a:hover:not(.active) {
 }
 
 .about img {
-    height: auto;
-<<<<<<< HEAD
-    max-width: 100%;
-    display: block;
-    position: relative;
-}
-
-.about #tyler {
     position: absolute;
-    top: 25%;
+    top: 125%;
     left: 65%;
     width: auto;
     height: auto;
     max-width: 50%;
     max-height: 50%;
     object-fit: cover;
-    z-index: 5;
-=======
-    max-width: 50%;
-    max-height: 50%;
-    object-fit: cover;
->>>>>>> parent of 91fbcc9... New page
 }
 
 /* ------------------------------------------------------------------ *\
-    Projects Page
+    About Page
 \* ------------------------------------------------------------------ */
 
-/*#projects h1 {
-    font-family: 'Ubuntu', sans-serif;
-    color: white;
-    position: absolute;
+.stuff {
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/stream.jpg');
+    background-size: cover;
+}
+
+.stuff h1 {
     font-size: 4em;
     font-size: 4vw;
     margin: 0%;
     top: 15%;
     padding-left: 12%;
     padding-right: 20%;
-    z-index: 5;
-}*/
+}
 
-/*#projects {
+.stuff p {
+    font-size: 2em;
+    font-size: 2vw;
+    top: 25%;
+    padding-left: 12%;
+    padding-right: 40%;
+}
+
+.stuff img {
+    position: absolute;
+    top: 125%;
+    left: 65%;
+    width: auto;
+    height: auto;
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: cover;
+}
+
+/* ------------------------------------------------------------------ *\
+    Projects Page
+\* ------------------------------------------------------------------ */
+
+.projects {
     height: 100%;
     width: 100%;
     background-image: url('../img/underground.jpg');
     background-size: cover;
 }
 
-
+.projects h1 {
+    color: white;
+    font-size: 4em;
+    font-size: 4vw;
+    margin: 0%;
+    top: 15%;
+    padding-left: 12%;
+    padding-right: 20%;
+}
 
 .projects h3 {
-    font-family: 'Ubuntu', sans-serif;
     color: white;
-    position: relative;
     font-size: 2em;
     font-size: 2vw;
     margin: 0%;
     top: 22%;
-    padding-left: 17%;
+    padding-left: 14%;
     padding-right: 20%;
-    z-index: 5;
 }
 
 .projects h3 a {
@@ -218,7 +221,7 @@ li a:hover:not(.active) {
 
 .centerProject {
     position: relative;
-    left: 10%;
+    left: 14%;
     margin-top: 12%;
     z-index: 2;
     width: auto;
@@ -231,16 +234,17 @@ li a:hover:not(.active) {
 
 .projects img:hover {
     opacity: 0.8;
-}*/
+}
 
 /* ------------------------------------------------------------------ *\
     Contact Page
 \* ------------------------------------------------------------------ */
 
 .contact {
-    height: auto;
-    max-width: 100%;
-    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/black-gradient.jpg');
+    background-size: cover;
 }
 
 .contact h1 {
@@ -253,15 +257,7 @@ li a:hover:not(.active) {
     padding-right: 20%;
 }
 
-.contact img {
-    height: auto;
-    max-width: 100%;
-    display: block;
-    position: relative;
-}
-
 .contact #github {
-    position: absolute;
     margin-left: 46%;
     margin-top: 40%;
 }
