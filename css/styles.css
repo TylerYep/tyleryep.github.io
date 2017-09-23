@@ -116,28 +116,40 @@ li a:hover:not(.active) {
     background-size: cover;
 }
 
+.about-container {
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: #solid 10px #000;
+    background-color: rgba(242,242,242,0.5);
+    width: 85%;
+    height: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 30%;
+    position: relative;
+}
+
 .about h1 {
-    color: white;
     font-size: 4em;
     font-size: 4vw;
     margin: 0%;
-    top: 30%;
-    padding-left: 12%;
-    padding-right: 20%;
+    top: 20%;
+    padding-left: 6%;
+    padding-right: 30%;
 }
 
 .about p {
-    color: white;
     font-size: 2em;
     font-size: 2vw;
-    top: 40%;
-    padding-left: 12%;
-    padding-right: 40%;
+    top: 30%;
+    padding-left: 6%;
+    padding-right: 35%;
 }
 
 .about img {
     position: absolute;
-    top: 135%;
+    top: 140%;
     left: 65%;
     width: auto;
     height: auto;
