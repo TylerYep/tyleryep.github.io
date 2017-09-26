@@ -112,7 +112,7 @@ li a:hover:not(.active) {
 .about {
     height: 100%;
     width: 100%;
-    background-image: url('../img/earth_up.jpg');
+    background-image: url('../img/earth-up.jpg');
     background-size: cover;
 }
 
@@ -165,7 +165,7 @@ li a:hover:not(.active) {
 .projects {
     height: 100%;
     width: 100%;
-    background-image: url('../img/earth_down.jpg');
+    background-image: url('../img/earth-down.jpg');
     background-size: cover;
 }
 
