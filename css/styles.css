@@ -114,6 +114,7 @@ li a:hover:not(.active) {
     width: 100%;
     background-image: url('../img/earth-up.jpg');
     background-size: cover;
+    background-attachment: local;
 }
 
 .about-container {
@@ -232,7 +233,16 @@ li a:hover:not(.active) {
     padding-right: 20%;
 }
 
-.contact #github {
-    margin-left: 46%;
-    margin-top: 40%;
+.contact ul {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    top: 80%;
+    padding: 0%;
+    padding-left: 18%;
+}
+
+.contact li {
+    display: inline;
+    padding: 5%;
 }
