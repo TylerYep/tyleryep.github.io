@@ -114,7 +114,6 @@ li a:hover:not(.active) {
     width: 100%;
     background-image: url('../img/earth-up.jpg');
     background-size: cover;
-    background-attachment: local;
 }
 
 .about-container {
@@ -170,6 +169,63 @@ li a:hover:not(.active) {
     background-size: cover;
 }
 
+.projects-container {
+    width: 85%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 5%;
+    position: relative;
+}
+
+.one-project {
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: #solid 10px #000;
+    background-color: rgba(242,242,242,0.5);
+
+    width: 30%;
+    height: 38%;
+    position: absolute;
+}
+
+.one-project img {
+    height: 100%;
+    width: 100%;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: #solid 10px #000;
+}
+
+.overlay {
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: #solid 10px #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #0073E6;
+}
+
+.text {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 36px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
 .projects h1 {
     color: white;
     font-size: 4em;
@@ -180,35 +236,7 @@ li a:hover:not(.active) {
     padding-right: 20%;
 }
 
-.projects h3 {
-    color: white;
-    font-size: 2em;
-    font-size: 2vw;
-    margin: 0%;
-    top: 22%;
-    padding-left: 14%;
-    padding-right: 20%;
-}
-
-.projects h3 a {
-    color: white;
-    text-decoration: underline;
-}
-
-.centerProject {
-    position: relative;
-    left: 14%;
-    margin-top: 12%;
-    z-index: 2;
-    width: auto;
-    height: auto;
-    max-width: 50%;
-    max-height: 50%;
-    object-fit: cover;
-    opacity: 0.2;
-}
-
-.projects img:hover {
+.one-project:hover .overlay {
     opacity: 0.8;
 }
 
