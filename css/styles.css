@@ -195,8 +195,8 @@ li a:hover:not(.active) {
     border: #solid 10px #000;
     background-color: rgba(242,242,242,0.5);
 
-    width: 30%;
-    height: 38%;
+    width: 28%;
+    height: 35%;
     position: absolute;
 }
 
@@ -241,8 +241,8 @@ li a:hover:not(.active) {
     font-size: 4em;
     font-size: 4vw;
     margin: 0%;
-    top: 5%;
-    padding-left: 10%;
+    top: 6%;
+    padding-left: 12%;
     padding-right: 20%;
 }
 
