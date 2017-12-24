@@ -1,24 +1,24 @@
 getTime();
 
 document.getElementById("sunrisebutton").addEventListener("click", function() {
+    changeBackground("sunrise");
     removeMoon();
     sunriseSunset();
-    changeBackground("sunrise");
 });
 document.getElementById("sunbutton").addEventListener("click", function() {
+    changeBackground("sun");
     removeMoon();
     bringSun();
-    changeBackground("sun");
 });
 document.getElementById("sunsetbutton").addEventListener("click", function() {
+    changeBackground("sunset");
     removeMoon();
     sunriseSunset();
-    changeBackground("sunset");
 });
 document.getElementById("nightbutton").addEventListener("click", function() {
+    changeBackground("night");
     removeSun();
     bringMoon();
-    changeBackground("night");
 });
 
 function getTime() {
