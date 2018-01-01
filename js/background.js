@@ -23,18 +23,15 @@ document.getElementById("nightbutton").addEventListener("click", function() {
 
 function getTime() {
     var currentTime = new Date().getHours();
-    if (0 <= currentTime && currentTime < 5) {
+    if (currentTime >= 0 && currentTime < 5 || currentTime >= 19) {
         changeBackground("night");
         bringMoon();
-    } else if (5 <= currentTime && currentTime < 8) {
+    } else if (currentTime >= 5 && currentTime < 8) {
         changeBackground("sunrise");
         sunriseSunset();
-    } else if (16 <= currentTime && currentTime < 19) {
+    } else if (currentTime >= 16 && currentTime < 19) {
         changeBackground("sunset");
         sunriseSunset();
-    } else if (19 <= currentTime && currentTime <= 24) {
-        changeBackground("night");
-        bringMoon();
     } else {
         bringSun();
     }
