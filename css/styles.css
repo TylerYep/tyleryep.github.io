@@ -121,7 +121,7 @@ li a:hover:not(.active) {
     -webkit-border-radius: 30px;
     border-radius: 30px;
     border: #solid 10px #000;
-    background-color: rgba(242,242,242,0.4);
+    background-color: rgba(242,242,242,0.5);
     width: 85%;
     height: 60%;
     margin-left: auto;
@@ -274,13 +274,16 @@ li a:hover:not(.active) {
 .contact ul {
     position: relative;
     list-style-type: none;
-    margin: 0;
     top: 80%;
     padding: 0%;
-    padding-left: 18%;
+    margin-left: 18%;
 }
 
 .contact li {
     display: inline;
     padding: 5%;
+}
+.contact li a:hover {
+    box-shadow: 0px 0px 50px 30px white, 0px 0px 40px white inset;
+    border-radius: 30%;
 }
