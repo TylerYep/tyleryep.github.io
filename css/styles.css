@@ -73,7 +73,7 @@ li a:hover:not(.active) {
 .home {
     height: 100%;
     width: 100%;
-    background-image: url('../img/sky.jpg');
+    background-image: url('../img/home/sky.jpg');
     background-size: cover;
 }
 
@@ -112,7 +112,7 @@ li a:hover:not(.active) {
 .about {
     height: 100%;
     width: 100%;
-    background-image: url('../img/earth-up.jpg');
+    background-image: url('../img/about/earth-up.jpg');
     background-size: cover;
 }
 
@@ -165,7 +165,7 @@ li a:hover:not(.active) {
 .earth {
     height: 100%;
     width: 100%;
-    background-image: url('../img/earth-down.jpg');
+    background-image: url('../img/about/earth-down.jpg');
     background-size: cover;
 }
 
@@ -176,7 +176,7 @@ li a:hover:not(.active) {
 .projects {
     height: 100%;
     width: 100%;
-    background-image: url('../img/stars.jpg');
+    background-image: url('../img/projects/stars.jpg');
     background-size: cover;
 }
 
@@ -257,7 +257,7 @@ li a:hover:not(.active) {
 .contact {
     height: 100%;
     width: 100%;
-    background-image: url('../img/black-gradient.jpg');
+    background-image: url('../img/contact/black-gradient.jpg');
     background-size: cover;
 }
 

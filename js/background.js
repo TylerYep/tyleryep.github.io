@@ -41,16 +41,16 @@ function changeBackground(button) {
     let homePage = document.getElementById("home");
     let header = document.getElementById("splash");
     if (button == "sunrise") {
-        homePage.style.backgroundImage = "url('img/sunrise.jpg')";
+        homePage.style.backgroundImage = "url('img/home/sunrise.jpg')";
         header.style.color = "inherit";
     } else if (button == "sun") {
-        homePage.style.backgroundImage = "url('img/sky.jpg')";
+        homePage.style.backgroundImage = "url('img/home/sky.jpg')";
         header.style.color = "inherit";
     } else if (button == "sunset") {
-        homePage.style.backgroundImage = "url('img/sunset.jpg')";
+        homePage.style.backgroundImage = "url('img/home/sunset.jpg')";
         header.style.color = "inherit";
     } else if (button == "night") {
-        homePage.style.backgroundImage = "url('img/nightsky.jpg')";
+        homePage.style.backgroundImage = "url('img/home/nightsky.jpg')";
         header.style.color = "white";
     }
 }
