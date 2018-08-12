@@ -1,2 +1,2 @@
 # Tyler Yep
-tyleryep.github.io
+tyleryep.com

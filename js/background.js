@@ -22,7 +22,7 @@ document.getElementById("nightbutton").addEventListener("click", function() {
 });
 
 function getTime() {
-    var currentTime = new Date().getHours();
+    let currentTime = new Date().getHours();
     if (currentTime >= 0 && currentTime < 5 || currentTime >= 19) {
         changeBackground("night");
         bringMoon();
@@ -38,8 +38,8 @@ function getTime() {
 }
 
 function changeBackground(button) {
-    var homePage = document.getElementById("home");
-    var header = document.getElementById("splash");
+    let homePage = document.getElementById("home");
+    let header = document.getElementById("splash");
     if (button == "sunrise") {
         homePage.style.backgroundImage = "url('img/sunrise.jpg')";
         header.style.color = "inherit";
@@ -56,26 +56,26 @@ function changeBackground(button) {
 }
 
 function removeSun() {
-    var sun = document.getElementById("sun");
+    let sun = document.getElementById("sun");
     sun.style.top = "70%";
 }
 
 function bringSun() {
-    var sun = document.getElementById("sun");
+    let sun = document.getElementById("sun");
     sun.style.top = "30%";
 }
 
 function removeMoon() {
-    var moon = document.getElementById("moon");
+    let moon = document.getElementById("moon");
     moon.style.top = "70%";
 }
 
 function bringMoon() {
-    var moon = document.getElementById("moon");
+    let moon = document.getElementById("moon");
     moon.style.top = "30%";
 }
 
 function sunriseSunset() {
-    var sun = document.getElementById("sun");
+    let sun = document.getElementById("sun");
     sun.style.top = "60%";
 }
