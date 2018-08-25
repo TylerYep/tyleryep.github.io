@@ -3,19 +3,19 @@
 \* ------------------------------------------------------------------ */
 
 html, body {
-    height: 100%;
-    font-size: 100%;
-    -webkit-user-select: none;
-    -moz-user-select: -moz-none;
-    -ms-user-select: none;
-    user-select: none;
+  height: 100%;
+  font-size: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 h1, p {
-    font-family: 'Ubuntu', sans-serif;
-    position: relative;
-    color: black;
-    z-index: 5;
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
+  color: black;
+  z-index: 5;
 }
 
 /* ------------------------------------------------------------------ *\
@@ -23,47 +23,47 @@ h1, p {
 \* ------------------------------------------------------------------ */
 
 header {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 
 header ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 2.5%;
+  list-style-type: none;
+  margin: 0;
+  padding: 2.5%;
 }
 
 header ul li {
-    font-family: 'Ubuntu', sans-serif;
-    line-height: 1em;
-    color: black;
-    font-size: 1.75em;
-    text-align: center;
-    display: inline;
-    padding: 3%;
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 1em;
+  color: black;
+  font-size: 1.75em;
+  text-align: center;
+  display: inline;
+  padding: 3%;
 }
 
 li a {
-    color: inherit;
+  color: inherit;
 }
 
 header #buttons {
-    float: left;
-    list-style-type: none;
-    margin: 0;
-    padding: 0%;
-    padding-left: 5%;
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 0%;
+  padding-left: 5%;
 }
 
 header #buttons li {
-    display: inline;
-    padding: 0%;
+  display: inline;
+  padding: 0%;
 }
 
 li a:hover:not(.active) {
-    text-decoration: none;
-    color: black;
-    text-shadow: 0px 0px 2px black
+  text-decoration: none;
+  color: black;
+  text-shadow: 0px 0px 2px black
 }
 
 /* ------------------------------------------------------------------ *\
@@ -71,37 +71,37 @@ li a:hover:not(.active) {
 \* ------------------------------------------------------------------ */
 
 .home {
-    height: 100%;
-    width: 100%;
-    background-image: url('../img/home/sky.jpg');
-    background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-image: url('../img/home/sky.jpg');
+  background-size: cover;
 }
 
 .home h1 {
-    font-size: 6em;
-    font-weight: bold;
-    margin: 0%;
-    top: 28%;
-    padding-left: 14%;
-    color: rgb(51, 51, 51);
+  font-size: 6em;
+  font-weight: bold;
+  margin: 0%;
+  top: 30%;
+  padding-left: 14%;
+  color: rgb(51, 51, 51);
 }
 
 .sun, .moon {
-    position: absolute;
-    left: 75%;
-    top: 70%;
-    width: 10%;
-    z-index: 2;
-    transition: top 1.5s ease-in-out;
+  position: absolute;
+  left: 75%;
+  top: 70%;
+  width: 10%;
+  z-index: 2;
+  transition: top 1.5s ease-in-out;
 }
 
 .treehills {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: inherit;
-    height: inherit;
-    z-index: 3;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  z-index: 3;
 }
 
 /* ------------------------------------------------------------------ *\
@@ -109,52 +109,66 @@ li a:hover:not(.active) {
 \* ------------------------------------------------------------------ */
 
 .about {
-    height: 100%;
-    width: 100%;
-    background-image: url('../img/about/earth-up.jpg');
-    background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-image: url('../img/about/earth-up.jpg');
+  background-size: cover;
 }
 
 .about-container {
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    border-radius: 30px;
-    border: #solid 10px #000;
-    background-color: rgba(242, 242, 242, 0.6);
-    width: 85%;
-    height: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    top: 40%;
-    position: relative;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  border: #solid 10px #000;
+  background-color: rgba(242, 242, 242, 0.6);
+  width: 86%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 30%;
+  position: relative;
 }
 
 .about h1 {
-    font-size: 3.5em;
-    margin: 0%;
-    top: 15%;
-    padding-left: 6%;
+  font-size: 3.5em;
+  padding-top: 10%;
+  padding-left: 10%;
 }
 
 .about p {
-    font-size: 1.5em;
-    top: 20%;
-    padding-left: 6%;
-    padding-right: 30%;
+  font-size: 1.5em;
+  padding-top: 3%;
+  padding-left: 10%;
 }
 
 .about img {
-    /* position: absolute; */
-    border: 5px solid rgba(242, 242, 242, 0.6);
-    border-radius: 20px 80px;
-    padding: 12px;
-    top: 150%;
-    left: 65%;
-    width: auto;
-    height: auto;
-    max-width: 50%;
-    max-height: 50%;
-    object-fit: cover;
+  border: 5px solid rgba(242, 242, 242, 0.6);
+  border-radius: 20px 80px;
+  padding: 12px;
+  display: block;
+  margin: auto;
+  margin-top: 20%;
+  object-fit: cover;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.scrollpoint {
+  position: absolute;
+}
+
+.left {
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  width: 60%;
+}
+
+.right {
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  width: 40%;
 }
 
 /* ------------------------------------------------------------------ *\
@@ -162,56 +176,68 @@ li a:hover:not(.active) {
 \* ------------------------------------------------------------------ */
 
 .earth {
-    height: 100%;
-    width: 100%;
-    background-image: url('../img/about/earth-down.jpg');
-    background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-image: url('../img/about/earth-down.jpg');
+  background-size: cover;
 }
 
 /* ------------------------------------------------------------------ *\
     Projects Page
 \* ------------------------------------------------------------------ */
 
-#projects {
-    height: 100%;
-    width: 100%;
-    background-image: url('../img/home/sky.jpg');
-    background-size: cover;
+.projects {
+  height: 100%;
+  width: 100%;
+  background-image: url('../img/home/sky.jpg');
+  background-size: cover;
 }
 
-#projects h1 {
-    position: absolute;
-    color: white;
-    font-size: 3.5em;
-    margin: 0%;
-    top: 6%;
-    padding-left: 12%;
+.projects h1 {
+  position: absolute;
+  color: white;
+  font-size: 3.5em;
+  margin: 0%;
+  top: 6%;
+  padding-left: 12%;
 }
 
 .carousel, .carousel-item, .carousel-inner, .active {
-    height: 100%;
+  height: 100%;
 }
 
 .carousel-inner img {
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .carousel-caption {
-    top: 0;
-    bottom: auto;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
-/* Delete when stable */
-
-/* .projects-container {
-    width: 85%;
-    height: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+.pencil_body {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 40%;
+  background: #2cd6c2;
+  border-radius: 5px;
 }
+
+/* .carousel-control-prev:hover {
+  box-shadow: 0px 0px 10px 10px white, 400px 400px 400px white inset;
+  border-radius: 3%;
+}
+
+.carousel-control-next:hover {
+  box-shadow: 0px 0px 10px 10px white, 400px 400px 400px white inset;
+  border-radius: 3%;
+} */
+
+/*
 
 .one-project {
     -moz-border-radius: 30px;
@@ -265,40 +291,39 @@ li a:hover:not(.active) {
     opacity: 0.8;
 } */
 
-/* delete above */
-
 /* ------------------------------------------------------------------ *\
     Contact Page
 \* ------------------------------------------------------------------ */
 
 .contact {
-    height: 100%;
-    width: 100%;
-    background-image: url('../img/contact/black-gradient.jpg');
-    background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-image: url('../img/contact/black-gradient.jpg');
+  background-size: cover;
 }
 
 .contact h1 {
-    color: white;
-    font-size: 3.5em;
-    margin: 0%;
-    top: 15%;
-    padding-left: 12%;
+  color: white;
+  font-size: 3.5em;
+  margin: 0%;
+  top: 15%;
+  padding-left: 12%;
 }
 
 .contact ul {
-    position: relative;
-    list-style-type: none;
-    top: 80%;
-    padding: 0%;
-    margin-left: 18%;
+  position: relative;
+  list-style-type: none;
+  top: 80%;
+  padding: 0%;
+  margin-left: 18%;
 }
 
 .contact li {
-    display: inline;
-    padding: 5%;
+  display: inline;
+  padding: 5%;
 }
+
 .contact li a:hover {
-    box-shadow: 0px 0px 50px 30px white, 0px 0px 40px white inset;
-    border-radius: 30%;
+  box-shadow: 0px 0px 50px 30px white, 0px 0px 40px white inset;
+  border-radius: 30%;
 }
