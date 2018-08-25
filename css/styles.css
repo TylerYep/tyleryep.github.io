@@ -153,10 +153,6 @@ li a:hover:not(.active) {
   max-width: 100%;
 }
 
-.scrollpoint {
-  position: absolute;
-}
-
 .left {
   display: inline-block;
   vertical-align: top;
