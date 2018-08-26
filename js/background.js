@@ -1,4 +1,5 @@
 getTime();
+zenscroll.setup(null, 0);
 
 document.getElementById("sunrisebutton").addEventListener("click", () => {
   changeBackground("sunrise");
@@ -43,16 +44,16 @@ function getTime() {
 function changeBackground(button) {
   let homePage = document.getElementById("home");
   let header = document.getElementById("splash");
-  if (button == "sunrise") {
+  if (button === "sunrise") {
     homePage.style.backgroundImage = "url('img/home/sunrise.jpg')";
     header.style.color = "inherit";
-  } else if (button == "sun") {
+  } else if (button === "sun") {
     homePage.style.backgroundImage = "url('img/home/sky.jpg')";
     header.style.color = "inherit";
-  } else if (button == "sunset") {
+  } else if (button === "sunset") {
     homePage.style.backgroundImage = "url('img/home/sunset.jpg')";
     header.style.color = "inherit";
-  } else if (button == "night") {
+  } else if (button === "night") {
     homePage.style.backgroundImage = "url('img/home/nightsky.jpg')";
     header.style.color = "white";
   }
