@@ -120,10 +120,10 @@ li a:hover:not(.active) {
 
 .about-container {
   border-radius: 30px;
-  border: #solid 10px #000;
-  background-color: rgba(242, 242, 242, 0.6);
+  border: 5px solid rgba(242, 242, 242, 0.5);
+  background-color: rgba(242, 242, 242, 0.5);
   width: 86%;
-  height: 60%;
+  height: 84%;
   margin-left: auto;
   margin-right: auto;
   top: 40%;
@@ -131,23 +131,28 @@ li a:hover:not(.active) {
 }
 
 .about h1 {
-  padding-top: 10%;
-  padding-left: 10%;
+  padding: 8% 0 2% 10%;
+
+}
+
+.about .box {
+  margin-left: 8%;
+  border-radius: 20px;
+  background-color: rgba(242, 242, 242, 0.3);
 }
 
 .about p {
   font-size: 1.25em;
-  padding-top: 3%;
-  padding-left: 10%;
+  padding: 3% 0 0 2%;
 }
 
 .about img {
-  border: 5px solid rgba(242, 242, 242, 0.6);
+  border: 5px solid rgba(242, 242, 242, 0.5);
   border-radius: 20px 80px;
   padding: 12px;
   display: block;
   margin: auto;
-  margin-top: 20%;
+  margin-top: 30%;
   -o-object-fit: cover;
   object-fit: cover;
   max-height: 100%;
@@ -214,24 +219,38 @@ li a:hover:not(.active) {
   left: 0;
 }
 
-.pencil_body {
+.timeline {
   position: absolute;
-  height: 30px;
+  height: 10px;
   width: 100%;
-  top: 40%;
-  background: #2cd6c2;
+
   border-radius: 5px;
+}
+
+.timeline.top {
+  background: #2cd6c2;
+  top: 30%;
+}
+
+.timeline.mid {
+  background: #00CC66;
+  top: 55%;
+}
+
+.timeline.bottom {
+  background: #FF4D4D;
+  top: 80%;
 }
 
 .one-project {
   border-radius: 50%;
-  border: #solid 10px #000;
+  border: 8px solid #2cd6c2;
   background-color: rgba(242, 242, 242, 0.5);
   z-index: 5;
-  width: 18%;
+  width: 12%;
   position: absolute;
-  top: 15%;
-  left: 50%;
+  top: 20%;
+  left: 40%;
 }
 
 .one-project img {
@@ -242,7 +261,7 @@ li a:hover:not(.active) {
 }
 
 .overlay {
-  border-radius: 300px;
+  border-radius: 50%;
   border: #solid 10px #000;
   position: absolute;
   top: 0;
@@ -259,7 +278,7 @@ li a:hover:not(.active) {
 .text {
   color: white;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 36px;
+  font-size: 30px;
   position: absolute;
   top: 50%;
   left: 50%;
