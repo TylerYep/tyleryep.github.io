@@ -276,7 +276,7 @@ li a:hover:not(.active) {
   border-radius: 50%;
   border: 8px solid #2cd6c2;
   background-color: rgba(242, 242, 242, 0.5);
-  z-index: 5;
+  z-index: 10;
   width: 10%;
 
   position: absolute;
@@ -288,6 +288,10 @@ li a:hover:not(.active) {
 .one-project:hover .overlay {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+
+.one-project.left {
+  left: 80%;
 }
 
 .one-project img {
