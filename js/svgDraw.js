@@ -1,11 +1,4 @@
-function connectAllDivs() {
-  connectDivs("a", "b", "#2cd6c2", 0.6);
-  connectDivs("c", "d", "#2cd6c2", 0.6);
-  connectDivs("d", "a", "#2cd6c2", 0.6);
-  connectDivs("e", "f", "#2cd6c2", 0.6);
-
-}
-
+connectAllDivs();
 
 window.onresize = event => {
   const svg = document.getElementById("svg-canvas");
@@ -15,15 +8,20 @@ window.onresize = event => {
   connectAllDivs();
 };
 
-connectAllDivs();
-
+// Just add connections here to link two nodes!
+function connectAllDivs() {
+  connectDivs("openproof", "b", "#2cd6c2");
+  connectDivs("c", "d", "#2cd6c2");
+  connectDivs("d", "openproof", "#2cd6c2");
+}
 
 /* --- Helper functions --- */
 
 function createSVG() {
   let svg = document.getElementById("svg-canvas");
   if (svg == null) {
-    svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    const namespace = "http://www.w3.org/2000/svg";
+    svg = document.createElementNS(namespace, "svg");
     svg.setAttribute('id', 'svg-canvas');
 
     let p = document.getElementsByClassName("carousel-item active")[0];
@@ -50,7 +48,8 @@ function drawCurvedLine(x1, y1, x2, y2, color, tension) {
   let hy2 = y2;
   const path = "M " + x1 + " " + y1 + " C " + hx1 + " " + hy1 + " " + hx2 + " " + hy2 + " " + x2 + " " + y2;
 
-  let shape = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  const namespace = "http://www.w3.org/2000/svg";
+  let shape = document.createElementNS(namespace, "path");
   shape.setAttribute("d", path);
   shape.setAttribute("stroke", color);
   shape.setAttribute("style", "fill: none;");
@@ -58,7 +57,7 @@ function drawCurvedLine(x1, y1, x2, y2, color, tension) {
   svg.appendChild(shape);
 }
 
-function connectDivs(leftId, rightId, color, tension) {
+function connectDivs(leftId, rightId, color, tension = 0.5) {
   const left = document.getElementById(leftId);
   const right = document.getElementById(rightId);
 
