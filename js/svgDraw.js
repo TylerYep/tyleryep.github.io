@@ -8,11 +8,16 @@ window.onresize = event => {
   connectAllDivs();
 };
 
-// Just add connections here to link two nodes!
+// Just add connections here to link two nodes! "#2cd6c2"
+// TODO figure out how to draw lines off the page
 function connectAllDivs() {
-  connectDivs("openproof", "b", "#2cd6c2");
-  connectDivs("c", "d", "#2cd6c2");
-  connectDivs("d", "openproof", "#2cd6c2");
+  connectDivs("stanford", "openproof");
+  connectDivs("stanford", "edutech");
+  connectDivs("stanford", "vhil");
+  connectDivs("stanford", "marker0");
+  connectDivs("openproof", "marker5");
+  connectDivs("cs198", "marker1");
+  connectDivs("cs198", "marker6");
 }
 
 /* --- Helper functions --- */
@@ -57,7 +62,7 @@ function drawCurvedLine(x1, y1, x2, y2, color, tension) {
   svg.appendChild(shape);
 }
 
-function connectDivs(leftId, rightId, color, tension = 0.5) {
+function connectDivs(leftId, rightId, color = "lightseagreen", tension = 0.6) {
   const left = document.getElementById(leftId);
   const right = document.getElementById(rightId);
 
