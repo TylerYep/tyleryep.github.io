@@ -19,6 +19,13 @@ $(".carousel-control-next").on("click", event => {
   window.requestAnimationFrame(waitForSlide);
 });
 
+$(".carousel-indicators").children('li').each(function() {
+  $(this).on("click", event => {
+    event.preventDefault();
+    window.requestAnimationFrame(waitForSlide);
+  });
+});
+
 // Just add connections here to link two nodes! "#2cd6c2"
 function connectAllDivs() {
   const activeSlide = findActiveSlide();

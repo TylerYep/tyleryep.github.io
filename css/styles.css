@@ -14,7 +14,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-h1, p {
+h1, h2, p {
   font-family: 'Ubuntu', sans-serif;
   position: relative;
   color: black;
@@ -228,6 +228,16 @@ li a:hover:not(.active) {
   position: absolute;
 }
 
+.projects h2 {
+  color: white;
+  text-align: right;
+  margin-top: 2%;
+  width: 90%;
+  position: absolute;
+  font-size: 2.5em;
+
+}
+
 .svg-canvas {
   position: absolute;
   height: 100%;
@@ -433,6 +443,11 @@ li a:hover:not(.active) {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+}
+
+.modal-body {
+  height: 100%;
+  width: 100%;
 }
 
 .close {
