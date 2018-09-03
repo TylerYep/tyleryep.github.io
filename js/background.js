@@ -1,6 +1,10 @@
 getTime();
 zenscroll.setup(null, 0);
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+})
+
 document.getElementById("sunrisebutton").addEventListener("click", () => {
   changeBackground("sunrise");
   removeMoon();

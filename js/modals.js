@@ -1,6 +1,6 @@
 let projectDiv = document.getElementById("openproof");
-let span = document.getElementsByClassName("close")[0];
 let modal = document.getElementById("openproof-modal");
+let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 projectDiv.onclick = () => {

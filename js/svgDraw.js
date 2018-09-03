@@ -1,38 +1,82 @@
+const carousels = document.getElementsByClassName("carousel-item");
+for (let i = 0; i < carousels.length; i++) {
+  createCanvas(carousels[i]);
+}
+
 connectAllDivs();
 
-window.onresize = event => {
-  const svg = document.getElementById("svg-canvas");
-  while (svg.firstChild) {
-    svg.removeChild(svg.firstChild);
+// window.onresize = event => {
+//   const carousel = document.getElementsByClassName("carousel-item active")[0];
+//   const svg = carousel.getElementsByClassName("svg-canvas")[0];
+//   while (svg.firstChild) {
+//     svg.removeChild(svg.firstChild);
+//   }
+//   createCanvas(carousel);
+//   connectAllDivs();
+// };
+
+async function waitForSlide() {
+  if ($(".carousel-item-left").length > 0) {
+    window.requestAnimationFrame(waitForSlide);
+  } else {
+    connectAllDivs();
   }
-  connectAllDivs();
-};
+}
+
+$(".carousel-control-prev").on("click", event => {
+  event.preventDefault();
+  window.requestAnimationFrame(waitForSlide);
+});
+
+$(".carousel-control-next").on("click", event => {
+  event.preventDefault();
+  window.requestAnimationFrame(waitForSlide);
+});
 
 // Just add connections here to link two nodes! "#2cd6c2"
-// TODO figure out how to draw lines off the page
 function connectAllDivs() {
-  connectDivs("stanford", "openproof");
-  connectDivs("stanford", "edutech");
-  connectDivs("stanford", "vhil");
-  connectDivs("stanford", "marker0");
-  connectDivs("openproof", "marker5");
-  connectDivs("cs198", "marker1");
-  connectDivs("cs198", "marker6");
+  const carouselSlides = document.getElementsByClassName("carousel-item");
+  let activeSlide = 0;
+  for (let i = 0; i < carouselSlides.length; i++) {
+    if (carouselSlides[i].className.includes("active")) {
+      activeSlide = i;
+    }
+  }
+  if (activeSlide === 0) {
+    connectDivs(0, "stanford", "openproof");
+    connectDivs(0, "stanford", "edutech");
+    connectDivs(0, "marker-0", "stanford");
+    connectDivs(0, "openproof", "marker-5");
+    connectDivs(0, "marker-1", "cs198");
+    connectDivs(0, "cs198", "marker-6");
+  }
+  if (activeSlide === 1) {
+    connectDivs(1, "marker-10", "stanford-2");
+    connectDivs(1, "stanford-2", "intuit");
+    connectDivs(1, "stanford-2", "vhil");
+    connectDivs(1, "vhil", "marker-16");
+    connectDivs(1, "marker-16", "intuit");
+    connectDivs(1, "intuit", "marker-15");
+
+    connectDivs(1, "marker-11", "wolfbot");
+    connectDivs(1, "marker-17", "cs198-2");
+    connectDivs(1, "cs198-2", "marker-18");
+
+  }
+
 }
 
 /* --- Helper functions --- */
 
-function createSVG() {
-  let svg = document.getElementById("svg-canvas");
-  if (svg == null) {
-    const namespace = "http://www.w3.org/2000/svg";
-    svg = document.createElementNS(namespace, "svg");
-    svg.setAttribute('id', 'svg-canvas');
+function createCanvas(carousel) {
+  const namespace = "http://www.w3.org/2000/svg";
+  let svg = document.createElementNS(namespace, "svg");
+  svg.setAttribute('class', 'svg-canvas');
+  carousel.insertBefore(svg, carousel.firstChild);
+}
 
-    let p = document.getElementsByClassName("carousel-item active")[0];
-    p.insertBefore(svg, p.firstChild);
-  }
-  return svg;
+function getSVG(index = 0) {
+  return document.getElementsByClassName("svg-canvas")[index];
 }
 
 function findAbsolutePosition(htmlElement) {
@@ -44,8 +88,8 @@ function findAbsolutePosition(htmlElement) {
   return {"x": x, "y": y};
 }
 
-function drawCurvedLine(x1, y1, x2, y2, color, tension) {
-  const svg = createSVG();
+function drawCurvedLine(index, x1, y1, x2, y2, color, tension) {
+  const svg = getSVG(index);
   const delta = (x2 - x1) * tension;
   let hx1 = x1 + delta;
   let hy1 = y1;
@@ -57,12 +101,13 @@ function drawCurvedLine(x1, y1, x2, y2, color, tension) {
   let shape = document.createElementNS(namespace, "path");
   shape.setAttribute("d", path);
   shape.setAttribute("stroke", color);
+  shape.setAttribute("class", "path");
   shape.setAttribute("style", "fill: none;");
   shape.setAttribute("stroke-width", 10);
   svg.appendChild(shape);
 }
 
-function connectDivs(leftId, rightId, color = "lightseagreen", tension = 0.6) {
+function connectDivs(index, leftId, rightId, color = "lightseagreen", tension = 0.6) {
   const left = document.getElementById(leftId);
   const right = document.getElementById(rightId);
 
@@ -74,5 +119,5 @@ function connectDivs(leftId, rightId, color = "lightseagreen", tension = 0.6) {
   const x2 = rightPos.x;
   const y2 = rightPos.y - 3 * document.body.clientHeight; // Projects page is 3rd from the top
 
-  drawCurvedLine(x1, y1, x2, y2, color, tension);
+  drawCurvedLine(index, x1, y1, x2, y2, color, tension);
 }
