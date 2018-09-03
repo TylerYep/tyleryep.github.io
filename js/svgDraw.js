@@ -1,27 +1,13 @@
-const carousels = document.getElementsByClassName("carousel-item");
-for (let i = 0; i < carousels.length; i++) {
-  createCanvas(carousels[i]);
-}
+// Written by Tyler Yep
 
+createAllCanvas();
 connectAllDivs();
 
-// window.onresize = event => {
-//   const carousel = document.getElementsByClassName("carousel-item active")[0];
-//   const svg = carousel.getElementsByClassName("svg-canvas")[0];
-//   while (svg.firstChild) {
-//     svg.removeChild(svg.firstChild);
-//   }
-//   createCanvas(carousel);
-//   connectAllDivs();
-// };
-
-async function waitForSlide() {
-  if ($(".carousel-item-left").length > 0) {
-    window.requestAnimationFrame(waitForSlide);
-  } else {
-    connectAllDivs();
-  }
-}
+window.onresize = event => {
+  event.preventDefault();
+  resetAllCanvases();
+  connectAllDivs();
+};
 
 $(".carousel-control-prev").on("click", event => {
   event.preventDefault();
@@ -35,13 +21,8 @@ $(".carousel-control-next").on("click", event => {
 
 // Just add connections here to link two nodes! "#2cd6c2"
 function connectAllDivs() {
-  const carouselSlides = document.getElementsByClassName("carousel-item");
-  let activeSlide = 0;
-  for (let i = 0; i < carouselSlides.length; i++) {
-    if (carouselSlides[i].className.includes("active")) {
-      activeSlide = i;
-    }
-  }
+  const activeSlide = findActiveSlide();
+
   if (activeSlide === 0) {
     connectDivs(0, "stanford", "openproof");
     connectDivs(0, "stanford", "edutech");
@@ -61,22 +42,47 @@ function connectAllDivs() {
     connectDivs(1, "marker-11", "wolfbot");
     connectDivs(1, "marker-17", "cs198-2");
     connectDivs(1, "cs198-2", "marker-18");
-
   }
-
 }
 
 /* --- Helper functions --- */
 
-function createCanvas(carousel) {
-  const namespace = "http://www.w3.org/2000/svg";
-  let svg = document.createElementNS(namespace, "svg");
-  svg.setAttribute('class', 'svg-canvas');
-  carousel.insertBefore(svg, carousel.firstChild);
+function findActiveSlide() {
+  const carouselSlides = document.getElementsByClassName("carousel-item");
+  for (let i = 0; i < carouselSlides.length; i++) {
+    if (carouselSlides[i].className.includes("active")) {
+      return i;
+    }
+  }
 }
 
-function getSVG(index = 0) {
-  return document.getElementsByClassName("svg-canvas")[index];
+function resetAllCanvases() {
+  const carouselSlides = document.getElementsByClassName("carousel-item");
+  for (let i = 0; i < carouselSlides.length; i++) {
+    const svg = carouselSlides[i].getElementsByClassName("svg-canvas")[0];
+    while (svg.firstChild) {
+      svg.removeChild(svg.firstChild);
+    }
+  }
+}
+
+function waitForSlide() {
+  if ($(".carousel-item-left").length > 0 || $(".carousel-item-right").length > 0) {
+    window.requestAnimationFrame(waitForSlide);
+  } else {
+    connectAllDivs();
+  }
+}
+
+function createAllCanvas() {
+  const carousels = document.getElementsByClassName("carousel-item");
+  for (let i = 0; i < carousels.length; i++) {
+    const carousel = carousels[i];
+    const namespace = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(namespace, "svg");
+    svg.setAttribute('class', 'svg-canvas');
+    carousel.insertBefore(svg, carousel.firstChild);
+  }
 }
 
 function findAbsolutePosition(htmlElement) {
@@ -88,17 +94,17 @@ function findAbsolutePosition(htmlElement) {
   return {"x": x, "y": y};
 }
 
-function drawCurvedLine(index, x1, y1, x2, y2, color, tension) {
-  const svg = getSVG(index);
+function drawCurvedLine(slideIndex, x1, y1, x2, y2, color, tension) {
+  const svg = document.getElementsByClassName("svg-canvas")[slideIndex];
   const delta = (x2 - x1) * tension;
-  let hx1 = x1 + delta;
-  let hy1 = y1;
-  let hx2 = x2 - delta;
-  let hy2 = y2;
+  const hx1 = x1 + delta;
+  const hy1 = y1;
+  const hx2 = x2 - delta;
+  const hy2 = y2;
   const path = "M " + x1 + " " + y1 + " C " + hx1 + " " + hy1 + " " + hx2 + " " + hy2 + " " + x2 + " " + y2;
 
   const namespace = "http://www.w3.org/2000/svg";
-  let shape = document.createElementNS(namespace, "path");
+  const shape = document.createElementNS(namespace, "path");
   shape.setAttribute("d", path);
   shape.setAttribute("stroke", color);
   shape.setAttribute("class", "path");
@@ -107,7 +113,7 @@ function drawCurvedLine(index, x1, y1, x2, y2, color, tension) {
   svg.appendChild(shape);
 }
 
-function connectDivs(index, leftId, rightId, color = "lightseagreen", tension = 0.6) {
+function connectDivs(slideIndex, leftId, rightId, color = "lightseagreen", tension = 0.6) {
   const left = document.getElementById(leftId);
   const right = document.getElementById(rightId);
 
@@ -119,5 +125,5 @@ function connectDivs(index, leftId, rightId, color = "lightseagreen", tension = 
   const x2 = rightPos.x;
   const y2 = rightPos.y - 3 * document.body.clientHeight; // Projects page is 3rd from the top
 
-  drawCurvedLine(index, x1, y1, x2, y2, color, tension);
+  drawCurvedLine(slideIndex, x1, y1, x2, y2, color, tension);
 }

@@ -1,3 +1,5 @@
+// Written by Tyler Yep
+
 getTime();
 zenscroll.setup(null, 0);
 

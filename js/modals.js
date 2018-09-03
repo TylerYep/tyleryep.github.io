@@ -1,3 +1,5 @@
+// Written by Tyler Yep
+
 let projectDiv = document.getElementById("openproof");
 let modal = document.getElementById("openproof-modal");
 let span = document.getElementsByClassName("close")[0];
