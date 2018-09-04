@@ -9,64 +9,68 @@ window.onresize = event => {
   connectAllDivs();
 };
 
-$(".carousel-control-prev").on("click", event => {
+$('.carousel-control-prev').on('click', event => {
   event.preventDefault();
   window.requestAnimationFrame(waitForSlide);
 });
 
-$(".carousel-control-next").on("click", event => {
+$('.carousel-control-next').on('click', event => {
   event.preventDefault();
   window.requestAnimationFrame(waitForSlide);
 });
 
-$(".carousel-indicators").children('li').each(function() {
-  $(this).on("click", event => {
+$('.carousel-indicators').children('li').each(function() {
+  $(this).on('click', event => {
     event.preventDefault();
     window.requestAnimationFrame(waitForSlide);
   });
 });
 
-// Just add connections here to link two nodes! "#2cd6c2"
+// Just add connections here to link two nodes! '#2cd6c2'
 function connectAllDivs() {
   const activeSlide = findActiveSlide();
 
   if (activeSlide === 0) {
-    connectDivs(0, "stanford", "openproof");
-    connectDivs(0, "stanford", "edutech");
-    connectDivs(0, "marker-0", "stanford");
-    connectDivs(0, "openproof", "marker-5");
-    connectDivs(0, "marker-1", "cs198");
-    connectDivs(0, "cs198", "marker-6");
+    connectDivs(0, 'stanford', 'openproof');
+    connectDivs(0, 'stanford', 'edutech');
+    connectDivs(0, 'marker-0', 'stanford');
+    connectDivs(0, 'openproof', 'marker-5');
+    connectDivs(0, 'marker-1', 'cs198');
+    connectDivs(0, 'cs198', 'marker-6');
   }
   if (activeSlide === 1) {
-    connectDivs(1, "marker-10", "stanford-2");
-    connectDivs(1, "stanford-2", "intuit");
-    connectDivs(1, "stanford-2", "vhil");
-    connectDivs(1, "vhil", "marker-16");
-    connectDivs(1, "marker-16", "intuit");
-    connectDivs(1, "intuit", "marker-15");
-
-    connectDivs(1, "marker-11", "wolfbot");
-    connectDivs(1, "marker-17", "cs198-2");
-    connectDivs(1, "cs198-2", "marker-18");
+    connectDivs(1, 'marker-10', 'stanford-2');
+    connectDivs(1, 'stanford-2', 'intuit');
+    connectDivs(1, 'stanford-2', 'vhil');
+    connectDivs(1, 'vhil', 'marker-16');
+    connectDivs(1, 'marker-16', 'intuit');
+    connectDivs(1, 'intuit', 'marker-15');
+    connectDivs(1, 'marker-11', 'wolfbot');
+    connectDivs(1, 'marker-17', 'cs198-2');
+    connectDivs(1, 'cs198-2', 'marker-18');
   }
+  if (activeSlide === 2) {
+    connectDivs(2, 'marker-20', 'stanford-3');
+    connectDivs(2, 'marker-26', 'cs198-3');
+  }
+
 }
 
 /* --- Helper functions --- */
 
 function findActiveSlide() {
-  const carouselSlides = document.getElementsByClassName("carousel-item");
+  const carouselSlides = document.getElementsByClassName('carousel-item');
   for (let i = 0; i < carouselSlides.length; i++) {
-    if (carouselSlides[i].className.includes("active")) {
+    if (carouselSlides[i].className.includes('active')) {
       return i;
     }
   }
 }
 
 function resetAllCanvases() {
-  const carouselSlides = document.getElementsByClassName("carousel-item");
+  const carouselSlides = document.getElementsByClassName('carousel-item');
   for (let i = 0; i < carouselSlides.length; i++) {
-    const svg = carouselSlides[i].getElementsByClassName("svg-canvas")[0];
+    const svg = carouselSlides[i].getElementsByClassName('svg-canvas')[0];
     while (svg.firstChild) {
       svg.removeChild(svg.firstChild);
     }
@@ -74,7 +78,7 @@ function resetAllCanvases() {
 }
 
 function waitForSlide() {
-  if ($(".carousel-item-left").length > 0 || $(".carousel-item-right").length > 0) {
+  if ($('.carousel-item-left').length > 0 || $('.carousel-item-right').length > 0) {
     window.requestAnimationFrame(waitForSlide);
   } else {
     connectAllDivs();
@@ -82,11 +86,11 @@ function waitForSlide() {
 }
 
 function createAllCanvas() {
-  const carousels = document.getElementsByClassName("carousel-item");
+  const carousels = document.getElementsByClassName('carousel-item');
   for (let i = 0; i < carousels.length; i++) {
     const carousel = carousels[i];
-    const namespace = "http://www.w3.org/2000/svg";
-    const svg = document.createElementNS(namespace, "svg");
+    const namespace = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(namespace, 'svg');
     svg.setAttribute('class', 'svg-canvas');
     carousel.insertBefore(svg, carousel.firstChild);
   }
@@ -98,29 +102,29 @@ function findAbsolutePosition(htmlElement) {
     x += el.offsetLeft;
     y += el.offsetTop;
   }
-  return {"x": x, "y": y};
+  return {'x': x, 'y': y};
 }
 
 function drawCurvedLine(slideIndex, x1, y1, x2, y2, color, tension) {
-  const svg = document.getElementsByClassName("svg-canvas")[slideIndex];
+  const svg = document.getElementsByClassName('svg-canvas')[slideIndex];
   const delta = (x2 - x1) * tension;
   const hx1 = x1 + delta;
   const hy1 = y1;
   const hx2 = x2 - delta;
   const hy2 = y2;
-  const path = "M " + x1 + " " + y1 + " C " + hx1 + " " + hy1 + " " + hx2 + " " + hy2 + " " + x2 + " " + y2;
+  const path = 'M ' + x1 + ' ' + y1 + ' C ' + hx1 + ' ' + hy1 + ' ' + hx2 + ' ' + hy2 + ' ' + x2 + ' ' + y2;
 
-  const namespace = "http://www.w3.org/2000/svg";
-  const shape = document.createElementNS(namespace, "path");
-  shape.setAttribute("d", path);
-  shape.setAttribute("stroke", color);
-  shape.setAttribute("class", "path");
-  shape.setAttribute("style", "fill: none;");
-  shape.setAttribute("stroke-width", 10);
+  const namespace = 'http://www.w3.org/2000/svg';
+  const shape = document.createElementNS(namespace, 'path');
+  shape.setAttribute('d', path);
+  shape.setAttribute('stroke', color);
+  shape.setAttribute('class', 'path');
+  shape.setAttribute('style', 'fill: none;');
+  shape.setAttribute('stroke-width', 10);
   svg.appendChild(shape);
 }
 
-function connectDivs(slideIndex, leftId, rightId, color = "lightseagreen", tension = 0.6) {
+function connectDivs(slideIndex, leftId, rightId, color = 'lightseagreen', tension = 0.6) {
   const left = document.getElementById(leftId);
   const right = document.getElementById(rightId);
 
