@@ -71,7 +71,7 @@ const contentInfo = {
 }
 
 function loadModalContent(contentId) {
-  let modalBody = document.getElementById('modal-body');
+  let modalBody = document.getElementById('modal-body-left');
   modalBody.innerHTML = '';
 
   const contentObj = contentInfo[contentId];
