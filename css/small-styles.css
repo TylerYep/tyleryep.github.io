@@ -1,86 +1,16 @@
 /* Written by Tyler Yep */
 
 /* ------------------------------------------------------------------ *\
-    Overall HTML
-\* ------------------------------------------------------------------ */
-
-html, body {
-  height: 100%;
-  font-size: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: -moz-none;
-  -ms-user-select: none;
-  user-select: none;
-  scroll-behavior: smooth;
-}
-
-h1, h2, p {
-  font-family: 'Ubuntu', sans-serif;
-  position: relative;
-  color: black;
-  z-index: 5;
-  font-size: 3.5em;
-}
-
-/* ------------------------------------------------------------------ *\
     Header
 \* ------------------------------------------------------------------ */
 
-header {
-  position: relative;
-  z-index: 10;
-}
-
-header ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 2.5%;
-}
-
 header ul li {
-  font-family: 'Ubuntu', sans-serif;
-  line-height: 1em;
-  color: black;
   font-size: 1em;
-  text-align: center;
-  display: inline;
-  padding: 3%;
-}
-
-li a {
-  color: inherit;
-}
-
-header .buttons {
-  float: left;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  padding-left: 5%;
-}
-
-header .buttons li {
-  display: inline;
-  padding: 0;
-}
-
-li a:hover:not(.active) {
-  text-decoration: none;
-  color: black;
-  text-shadow: 0px 0px 3px black;
 }
 
 /* ------------------------------------------------------------------ *\
     Home Page
 \* ------------------------------------------------------------------ */
-
-.home {
-  height: 100%;
-  width: 100%;
-  background-image: url('../img/home/sky.jpg');
-  background-position: center;
-  background-size: cover;
-}
 
 .home h1 {
   font-size: 2.5em;
@@ -93,13 +23,8 @@ li a:hover:not(.active) {
 }
 
 .sun, .moon {
-  position: absolute;
   left: 72%;
-  top: 70%;
   width: 15%;
-  z-index: 2;
-  -webkit-transition: top 1.5s ease-in-out;
-  transition: top 1.5s ease-in-out;
 }
 
 .treehills {
@@ -115,392 +40,59 @@ li a:hover:not(.active) {
     About Page
 \* ------------------------------------------------------------------ */
 
-.about {
-  height: 100%;
-  width: 100%;
-  background-image: url('../img/about/earth-up.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
 .about-container, .modal {
-  border-radius: 30px;
-  background-color: rgba(242, 242, 242, 0.2);
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 10%;
   top: 16%;
-  position: relative;
-}
-
-.about h1 {
-  padding: 5% 0 1% 5%;
 }
 
 .box {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .about .left {
-  border-radius: 24px;
-  background-color: rgba(242, 242, 242, 0.4);
   width: 100%;
-  vertical-align: top;
-  padding-right: 10px;
-}
-
-.about p {
-  font-size: 1.25em;
-  padding: 3% 0 0 2%;
+  max-width: 100%;
 }
 
 .about img {
-  border: 12px solid rgba(242, 242, 242, 0.5);
   border-radius: 24px;
-  padding: 10px;
-  display: inline-block;
-  -o-object-fit: cover;
-  object-fit: cover;
 }
 
 /* ------------------------------------------------------------------ *\
     Space Page
 \* ------------------------------------------------------------------ */
 
-.earth {
-  height: 100%;
-  width: 100%;
-  background-image: url('../img/about/earth-down.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-/* Big screens */
-@media screen and (min-width: 1101px) {
-  .dot {
-    position: absolute;
-    padding-top: 700px;
-    padding-left: 400px;
-    -webkit-animation: xAxis 8s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
-    animation: xAxis 8s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
-  }
-
-  .dot::after {
-    content: '';
-    display: block;
-    width: 30px;
-    height: 30px;
-    border-radius: 20px;
-    background-color: #fff;
-    -webkit-animation: yAxis 8s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
-    animation: yAxis 8s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
-  }
-}
+/* No changes */
 
 /* ------------------------------------------------------------------ *\
     Projects Page
 \* ------------------------------------------------------------------ */
 
-.projects {
-  height: 100%;
-  width: 100%;
-}
-
-.projects h1 {
-  color: white;
-  text-align: left;
-  margin-left: 10%;
-  margin-top: 2%;
-  position: absolute;
-}
-
-.projects h2 {
+.projects h2.year {
   font-size: 0;
-}
-
-.svg-canvas {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
-}
-
-/* --- Carousel --- */
-
-.carousel, .carousel-item, .carousel-inner, .active {
-  height: 100%;
-}
-
-.carousel-inner img {
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  object-fit: cover;
-}
-
-.carousel-caption {
-  top: 0;
-  right: 0;
-  left: 0;
-}
-
-.carousel-control-prev, .carousel-control-next {
-  width: 11%;
-}
-
-/* --- Lines --- */
-
-.lane {
-  height: 22%;
-  width: 100%;
-  position: relative;
-}
-
-.lane.top {
-  margin-top: 6%;
-}
-
-.path {
-  stroke-dasharray: 1200;
-  animation: dash 1.5s linear forwards;
-}
-
-@keyframes dash {
-  from {
-    stroke-dasharray: 0 1200;
-  }
-  to {
-    stroke-dasharray: 1200 0;
-  }
-}
-
-/* --- Colors --- */
-
-.red {
-  background: #ff4d4d;
-}
-
-.blue {
-  background: #1a8cff;
-}
-
-.green {
-  background: #00dd66;
-}
-
-.yellow {
-  background: #fff56f;
 }
 
 /* --- Project Badges --- */
 
-.marker {
-  background: white;
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-  z-index: 10;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  cursor: auto;
-}
-
-/* Small screens */
-@media screen and (max-width: 1200px) {
-  .bubble {
-    border-radius: 50%;
-    border: 6px solid rgba(90, 90, 90, 0.4);
-    z-index: 10;
-    width: 20%;
-    height: 20vw;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-  }
-}
-
-.bubble:hover .overlay {
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-}
-
-.bubble p, .overlay {
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-
-.bubble img {
-  border-radius: 50%;
-  height: 100%;
-}
-
-.overlay {
-  border-radius: 50%;
-  position: absolute;
-
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
-}
-
-.overlay:hover {
-  box-shadow: 0px 0px 50px 30px white;
-}
-
-.text {
-  color: white;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 1.5em;
-  position: absolute;
-  text-decoration: none;
-}
-
-.dark {
-  color: black;
-}
-
-/* --- Grid Spacing --- */
-
-.zero {
-  left: 0;
-  height: 0;
-  width: 0;
-}
-
-.one {
-  left: 16%;
-}
-
-.two {
-  left: 39%;
-}
-
-.three {
-  left: 62%;
-}
-
-.four {
-  left: 85%;
-}
-
-.five {
-  left: 100%;
-  height: 0;
-  width: 0;
+.bubble {
+  width: 20%;
+  height: 20vw;
 }
 
 /* --- Modals --- */
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black */
-
-  top: 40%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-
-.modal-content {
-  background-color: rgba(255, 255, 255, 0.95);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 86%;
-  height: 80%;
-}
-
-.modal-body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .modal-left {
-  flex-direction: column;
-  padding-top: 0;
-  position: relative;
   width: 100%;
 }
 
 .modal-right {
   max-width: 70%;
-  max-height: 70%;
-  padding-left: 40px;
-  position: relative;
-  -o-object-fit: cover;
-  object-fit: cover;
-  margin: auto;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover, .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 /* ------------------------------------------------------------------ *\
     Contact Page
 \* ------------------------------------------------------------------ */
 
-.contact {
-  height: 100%;
-  width: 100%;
-  background-image: url('../img/contact/black-gradient.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-.contact h1 {
-  color: white;
-  top: 15%;
-  margin-left: 10%;
-}
-
-.contact ul {
-  position: relative;
-  list-style-type: none;
-  top: 60%;
-  padding: 0;
-  text-align: center;
-}
-
 .contact li {
-  display: inline;
-  padding-left: 5%;
-  padding-right: 5%;
-}
+  padding: 0;
 
-.contact li a:hover {
-  box-shadow: 0px 0px 50px 30px white, 0px 0px 50px white inset;
-  border-radius: 10%;
 }

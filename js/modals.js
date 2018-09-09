@@ -2,7 +2,7 @@
 
 let body = document.getElementsByTagName('body')[0];
 let projects = document.getElementsByClassName('bubble');
-let modal = document.getElementById('modal');
+let modal = document.getElementById('project-modal');
 
 // When the user clicks on the button, open the modal
 for (let i = 0; i < projects.length; i++) {
@@ -45,7 +45,7 @@ const contentInfo = {
   },
   'openproof' : {
     'title' : 'Openproof',
-    'text' : 'This was a fun project! I learned a ton about web development and lots of other things.\n\n\n\n\n\n\n',
+    'text' : 'This was a fun project! I learned a ton about web development and lots of other things.',
     'image' : 'img/projects/openproof.jpg'
   },
   'stanford' : {
@@ -80,8 +80,8 @@ function loadModalContent(contentId) {
   modalBody.innerHTML = '';
 
   const contentObj = contentInfo[contentId];
-  const paragraph = createTag('span', {}, contentObj.text);
-  const description = createTag('p', {}, contentObj.title);
+  const paragraph = createTag('p', {}, contentObj.text);
+  const description = createTag('h2', {}, contentObj.title);
   modalBody.appendChild(createTag('div', {class: 'modal-left'}, [description, paragraph]));
   modalBody.appendChild(createTag('img', {class: 'modal-right', src: contentObj.image}));
 }
