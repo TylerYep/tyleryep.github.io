@@ -45,7 +45,7 @@ const contentInfo = {
   },
   'openproof' : {
     'title' : 'Openproof',
-    'text' : 'This was a fun project!',
+    'text' : 'This was a fun project! I learned a ton about web development and lots of other things.\n\n\n\n\n\n\n',
     'image' : 'img/projects/openproof.jpg'
   },
   'stanford' : {
@@ -67,17 +67,23 @@ const contentInfo = {
     'title' : 'Intuit Internship',
     'text' : 'This was a fun job!',
     'image' : 'img/projects/intuit.png'
+  },
+  'vhil' : {
+    'title' : 'Virtual Human Interaction Lab',
+    'text' : 'This was a fun job!',
+    'image' : 'img/projects/vhil.jpg'
   }
 }
 
 function loadModalContent(contentId) {
-  let modalBody = document.getElementById('modal-body-left');
+  let modalBody = document.getElementById('modal-body');
   modalBody.innerHTML = '';
 
   const contentObj = contentInfo[contentId];
-  modalBody.appendChild(createTag('p', {}, contentObj.title));
-  modalBody.appendChild(createTag('h6', {}, contentObj.text));
-  modalBody.appendChild(createTag('img', {'src': contentObj.image}));
+  const paragraph = createTag('span', {}, contentObj.text);
+  const description = createTag('p', {}, contentObj.title);
+  modalBody.appendChild(createTag('div', {class: 'modal-left'}, [description, paragraph]));
+  modalBody.appendChild(createTag('img', {class: 'modal-right', src: contentObj.image}));
 }
 
 function createTag(name, attrs, contents = '', isQuote = true) {
