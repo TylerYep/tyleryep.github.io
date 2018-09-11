@@ -1,5 +1,13 @@
 // Written by Tyler Yep
 
+// Turn on Zenscroll
+zenscroll.setup(null, 0);
+
+// Turn on tooltips
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+})
+
 createAllCanvas();
 connectAllDivs();
 

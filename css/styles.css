@@ -1,6 +1,27 @@
 /* Written by Tyler Yep */
 
 /* ------------------------------------------------------------------ *\
+    Overall HTML
+\* ------------------------------------------------------------------ */
+
+html, body {
+  height: 100%;
+  font-size: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
+  color: black;
+  z-index: 5;
+}
+
+/* ------------------------------------------------------------------ *\
     About Page
 \* ------------------------------------------------------------------ */
 
