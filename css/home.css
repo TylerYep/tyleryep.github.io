@@ -1,3 +1,5 @@
+/* Written by Tyler Yep */
+
 /* ------------------------------------------------------------------ *\
     Header
 \* ------------------------------------------------------------------ */
@@ -58,6 +60,25 @@ li a:hover:not(.active) {
   background-size: cover;
 }
 
+.treehills {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  z-index: 3;
+}
+
+.sun, .moon {
+  position: absolute;
+  left: 75%;
+  top: 70%;
+  width: 10%;
+  z-index: 2;
+  -webkit-transition: top 1.5s ease-in-out;
+  transition: top 1.5s ease-in-out;
+}
+
 /* Small screens */
 @media screen and (max-width: 1100px) {
   .home h1 {
@@ -83,21 +104,6 @@ li a:hover:not(.active) {
   }
 }
 
-.sun, .moon {
-  position: absolute;
-  left: 75%;
-  top: 70%;
-  width: 10%;
-  z-index: 2;
-  -webkit-transition: top 1.5s ease-in-out;
-  transition: top 1.5s ease-in-out;
-}
-
-.treehills {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: inherit;
-  height: inherit;
-  z-index: 3;
+#home-overlay {
+  display: none;
 }
