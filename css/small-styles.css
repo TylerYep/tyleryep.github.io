@@ -40,8 +40,13 @@ header ul li {
     About Page
 \* ------------------------------------------------------------------ */
 
+.about h1 {
+  font-size: 2.5em;
+}
+
 .about-container, .modal {
   top: 16%;
+  border-radius: 0;
 }
 
 .box {
@@ -51,10 +56,16 @@ header ul li {
 .about .left {
   width: 100%;
   max-width: 100%;
+  border-radius: 0;
+
+}
+
+.about .left p {
+  font-size: 1.2em;
 }
 
 .about img {
-  border-radius: 24px;
+  border-radius: 0;
 }
 
 /* ------------------------------------------------------------------ *\
@@ -66,6 +77,10 @@ header ul li {
 /* ------------------------------------------------------------------ *\
     Projects Page
 \* ------------------------------------------------------------------ */
+
+.projects h1 {
+  font-size: 3em;
+}
 
 .projects h2.year {
   font-size: 0;
@@ -80,17 +95,32 @@ header ul li {
 
 /* --- Modals --- */
 
+.modal-body {
+  flex-direction: column;
+}
+
+.modal-body h2 {
+  color: black;
+  font-size: 1.5em;
+}
+
 .modal-left {
   width: 100%;
+  border-right: solid 0px black;
 }
 
 .modal-right {
-  max-width: 70%;
+  max-width: 100%;
+  padding: 0;
 }
 
 /* ------------------------------------------------------------------ *\
     Contact Page
 \* ------------------------------------------------------------------ */
+
+.contact h1 {
+  font-size: 3em;
+}
 
 .contact li {
   padding: 0;
