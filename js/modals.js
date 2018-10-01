@@ -40,37 +40,45 @@ window.onclick = event => {
 const contentInfo = {
   'edutech' : {
     'title' : 'EduTech',
-    'text' : 'This was a fun project!',
+    'text' : 'I worked on this project with my teammates in EE 15N: The Art & Science of Engineering\
+     Design. Our goal was to make a website for 8th grade Social Studies teachers to use to\
+     incorporate more project-based learning in their classes.',
     'image' : 'img/projects/edutech.jpg'
   },
   'openproof' : {
     'title' : 'Openproof',
-    'text' : 'This was a fun project! I learned a ton about web development and lots of other things.',
+    'text' : 'I learned a ton about web development and about working in a small\
+    group to accelerate the new version of a 10+ year old Logic curriculum website.',
     'image' : 'img/projects/openproof.jpg'
   },
   'stanford' : {
     'title' : 'Stanford University',
-    'text' : 'This was a fun school!',
+    'text' : 'This is my university, and where I have spent the past 3 years learning, growing, and thinking!\
+    Here, I have met some of the most incredible people I have ever known, and have worked with esteemed\
+    professors and researchers.',
     'image' : 'img/projects/stanford.jpg'
   },
   'cs198' : {
     'title' : 'CS 198: Section Leading',
-    'text' : 'This was a fun job!',
+    'text' : 'I am a section leader for CS 106B, the second introductory CS course at Stanford!',
     'image' : 'img/projects/cs198.png'
   },
   'wolfbot' : {
     'title' : 'One Night Ultimate Werewolf AI: WolfBot',
-    'text' : 'Tyler Yep',
+    'text' : 'The most exciting project I have worked on. Working with partner Harry Sha, for CS 221: Artificial Intelligence,\
+    we created two game-playing AIs that could navigate a social game of lies and deceit, designing and adapting\
+    machine learning algorithms to understand the game and choose optimal statements.',
     'image' : 'img/projects/wolfbot.jpg'
   },
   'intuit' : {
     'title' : 'Intuit Internship',
-    'text' : 'This was a fun job!',
+    'text' : 'I worked here in the summer of 2018, working in the Payroll team (100+ people), to create a\
+    UI automation framework that could be used by all Payroll subteams for regression testing!',
     'image' : 'img/projects/intuit.png'
   },
   'vhil' : {
     'title' : 'Virtual Human Interaction Lab',
-    'text' : 'This was a fun job!',
+    'text' : 'I worked here during my Sophomore year, designing VR experiences for pHD research!',
     'image' : 'img/projects/vhil.jpg'
   }
 }
