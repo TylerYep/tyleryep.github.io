@@ -37,6 +37,9 @@ window.onclick = event => {
   }
 }
 
+// Prevent deadlock with loading screen.
+document.getElementById("body").classList.add('loaded');
+
 const contentInfo = {
   'edutech' : {
     'title' : 'EduTech',
