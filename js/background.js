@@ -84,3 +84,5 @@ function sunriseSunset() {
   let sun = document.getElementById("sun");
   sun.style.top = "60%";
 }
+
+document.getElementById("body").classList.add('loaded');
