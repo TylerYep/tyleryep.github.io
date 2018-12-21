@@ -187,7 +187,7 @@ li a:hover:not(.active) {
 #loader-wrapper .loader-section {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 51%;
   height: 100%;
   background: #222222;
   z-index: 1000;
@@ -196,15 +196,36 @@ li a:hover:not(.active) {
   transform: translateX(0);
 }
 
-.loaded #loader-wrapper .loader-section {
-  -webkit-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+.loaded #loader-wrapper .loader-section.section-left {
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
 .loaded #loader {
   opacity: 0;
-  -webkit-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .loaded #loader-wrapper {
@@ -212,6 +233,6 @@ li a:hover:not(.active) {
   -webkit-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   transform: translateY(-100%);
-  -webkit-transition: all 0.1s 1s ease-out;
-  transition: all 0.1s 1s ease-out;
+  -webkit-transition: all 0.3s 1s ease-out;
+  transition: all 0.3s 1s ease-out;
 }
