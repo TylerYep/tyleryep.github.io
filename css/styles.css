@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6, p {
   .dot {
     position: absolute;
     padding-top: 700px;
-    padding-left: 400px;
+    padding-left: 250px;
     -webkit-animation: xAxis 8s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
     animation: xAxis 8s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
   }
@@ -120,8 +120,8 @@ h1, h2, h3, h4, h5, h6, p {
   .dot::after {
     content: '';
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 20px;
     background-color: #fff;
     -webkit-animation: yAxis 8s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
@@ -368,10 +368,9 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .modal-content {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(242, 242, 242, 0.9);
   margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
   width: 86%;
   height: 80%;
 }
@@ -388,7 +387,7 @@ h1, h2, h3, h4, h5, h6, p {
   padding-right: 20px;
   position: relative;
   width: 50%;
-  border-right: solid 1px black;
+  border-right: solid 3px black;
 }
 
 .modal-right {
@@ -454,6 +453,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .contact li a:hover {
+  background-color: rgb(232, 232, 232);
   box-shadow: 0px 0px 50px 30px white, 0px 0px 50px white inset;
   border-radius: 50%;
 }

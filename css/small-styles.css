@@ -20,6 +20,8 @@ header ul li {
   left: 15%;
   color: rgb(51, 51, 51);
   position: absolute;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
 }
 
 .sun, .moon {

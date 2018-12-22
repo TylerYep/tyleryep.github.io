@@ -20,7 +20,7 @@ header ul li {
   font-size: 1.5em;
   text-align: center;
   display: inline;
-  padding: 3%;
+  padding: 2.5%;
 }
 
 li a {
@@ -55,6 +55,8 @@ li a:hover:not(.active) {
   background-image: url('../img/home/sky.jpg');
   background-position: center;
   background-size: cover;
+  -webkit-transition: background-image 0.2s linear;
+  transition: background-image 0.2s linear;
 }
 
 .treehills {
@@ -72,8 +74,8 @@ li a:hover:not(.active) {
   top: 70%;
   width: 10%;
   z-index: 2;
-  -webkit-transition: top 1.5s ease-in-out;
-  transition: top 1.5s ease-in-out;
+  -webkit-transition: top 1.3s ease-in-out;
+  transition: top 1.3s ease-in-out;
 }
 
 /* Small screens */
@@ -86,6 +88,8 @@ li a:hover:not(.active) {
     left: 20%;
     color: rgb(51, 51, 51);
     position: absolute;
+    -webkit-transition: color 0.3s linear;
+    transition: color 0.3s linear;
   }
 }
 
@@ -98,6 +102,8 @@ li a:hover:not(.active) {
     top: 30%;
     padding-left: 14%;
     color: rgb(51, 51, 51);
+    -webkit-transition: color 0.3s linear;
+    transition: color 0.3s linear;
   }
 }
 
@@ -159,13 +165,11 @@ li a:hover:not(.active) {
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   100% {
     -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -173,13 +177,11 @@ li a:hover:not(.active) {
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   100% {
     -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -192,7 +194,6 @@ li a:hover:not(.active) {
   background: #222222;
   z-index: 1000;
   -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
   transform: translateX(0);
 }
 
@@ -206,8 +207,8 @@ li a:hover:not(.active) {
 
 .loaded #loader-wrapper .loader-section.section-left {
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   -webkit-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
   transform: translateX(-100%);
   -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
@@ -215,8 +216,8 @@ li a:hover:not(.active) {
 
 .loaded #loader-wrapper .loader-section.section-right {
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
   transform: translateX(100%);
   -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
@@ -224,6 +225,7 @@ li a:hover:not(.active) {
 
 .loaded #loader {
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
@@ -231,7 +233,6 @@ li a:hover:not(.active) {
 .loaded #loader-wrapper {
   visibility: hidden;
   -webkit-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
   transform: translateY(-100%);
   -webkit-transition: all 0.3s 1s ease-out;
   transition: all 0.3s 1s ease-out;
