@@ -1,6 +1,12 @@
 // Written by Tyler Yep
 
-getTime();
+/* --- Main --- */
+
+getTime(); // Set current background
+document.getElementById("body").classList.add('loaded'); // Remove loading screen
+
+
+/* --- Event Listeners --- */
 
 document.getElementById("sunrisebutton").addEventListener("click", () => {
   changeBackground("sunrise");
@@ -25,6 +31,9 @@ document.getElementById("nightbutton").addEventListener("click", () => {
   removeSun();
   bringMoon();
 });
+
+
+/* --- Function Definitions --- */
 
 function getTime() {
   const currentTime = new Date().getHours();
@@ -84,5 +93,3 @@ function sunriseSunset() {
   let sun = document.getElementById("sun");
   sun.style.top = "60%";
 }
-
-document.getElementById("body").classList.add('loaded');
