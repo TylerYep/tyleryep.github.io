@@ -10,8 +10,9 @@ html, body {
   -webkit-user-select: none;
   -moz-user-select: -moz-none;
   -ms-user-select: none;
-  user-select: none;
+  user-select: none; /* Disable text highlighting */
   scroll-behavior: smooth;
+  overscroll-behavior: none; /* Prevent scroll bounce at top/bottom of page */
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -383,15 +384,15 @@ h1, h2, h3, h4, h5, h6, p {
 
 .modal-left {
   flex-direction: column;
+  padding-left: 20%;
   padding-top: 0;
   padding-right: 20px;
   position: relative;
-  width: 50%;
-  border-right: solid 3px black;
+  width: 80%;
 }
 
 .modal-right {
-  max-width: 50%;
+  max-width: 0%;
   max-height: 70%;
   min-height: 400px;
   padding-left: 40px;
