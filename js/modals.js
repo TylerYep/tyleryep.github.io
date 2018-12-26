@@ -93,8 +93,8 @@ function loadModalContent(contentId) {
   const contentObj = contentInfo[contentId];
   const paragraph = createTag('p', {}, contentObj.text);
   const description = createTag('h2', {}, contentObj.title);
-  modalBody.appendChild(createTag('div', {class: 'modal-left'}, [description, paragraph]));
-  modalBody.appendChild(createTag('img', {class: 'modal-right', src: contentObj.image}));
+  modalBody.appendChild(createTag('img', {class: 'modal-left', src: contentObj.image}));
+  modalBody.appendChild(createTag('div', {class: 'modal-right'}, [description, paragraph]));
 }
 
 function createTag(name, attrs, contents = '', isQuote = true) {
