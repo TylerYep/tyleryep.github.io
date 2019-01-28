@@ -83,6 +83,11 @@ const contentInfo = {
     'title' : 'Virtual Human Interaction Lab',
     'text' : 'I worked here during my Sophomore year, designing VR experiences for pHD research!',
     'image' : 'img/projects/vhil.jpg'
+  },
+  'bridgewater' : {
+    'title' : 'Bridgewater Technology Associate',
+    'text' : 'I\'m going to work here during my Junior year summer!',
+    'image' : 'img/projects/bridgewater.png'
   }
 }
 
