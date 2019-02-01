@@ -40,6 +40,12 @@ header .buttons li {
   padding: 0;
 }
 
+header .buttons li input:hover {
+  background-color: green;
+  box-shadow: 0px 0px 10px 5px green, 0px 0px 5px green inset;
+  border-radius: 50%;
+}
+
 li a:hover:not(.active) {
   text-decoration: none;
   color: black;
