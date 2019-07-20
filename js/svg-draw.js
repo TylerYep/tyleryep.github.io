@@ -45,8 +45,7 @@ function connectAllDivs() {
     connectDivs(0, 'openproof', 'marker-5');
     connectDivs(0, 'marker-1', 'cs198');
     connectDivs(0, 'cs198', 'marker-6');
-  }
-  if (activeSlide === 1) {
+  } else if (activeSlide === 1) {
     connectDivs(1, 'marker-10', 'stanford-2');
     connectDivs(1, 'stanford-2', 'intuit');
     connectDivs(1, 'stanford-2', 'vhil');
@@ -56,12 +55,11 @@ function connectAllDivs() {
     connectDivs(1, 'marker-11', 'wolfbot');
     connectDivs(1, 'marker-17', 'cs198-2');
     connectDivs(1, 'cs198-2', 'marker-18');
-  }
-  if (activeSlide === 2) {
+  } else if (activeSlide === 2) {
     connectDivs(2, 'marker-20', 'stanford-3');
+    connectDivs(2, 'stanford-3', 'bridgewater');
     connectDivs(2, 'marker-26', 'cs198-3');
   }
-
 }
 
 /* --- Helper functions --- */

@@ -317,7 +317,7 @@ h1, h2, h3, h4, h5, h6, p {
   text-decoration: none;
 }
 
-.text.small{
+.text.small {
   font-size: 1.2em;
 }
 
@@ -377,7 +377,7 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   width: 86%;
-  height: 80%;
+  height: 100%;
 }
 
 .modal-body {
