@@ -52,8 +52,8 @@ function getTime() {
 }
 
 function changeBackground(button) {
-  let homePage = document.getElementById("home");
-  let header = document.getElementById("splash");
+  const homePage = document.getElementById("home");
+  const header = document.getElementById("splash");
   if (button === "sunrise") {
     homePage.style.backgroundImage = "url('img/home/sunrise.jpg')";
     header.style.color = "inherit";
@@ -70,26 +70,26 @@ function changeBackground(button) {
 }
 
 function removeSun() {
-  let sun = document.getElementById("sun");
+  const sun = document.getElementById("sun");
   sun.style.top = "70%";
 }
 
 function bringSun() {
-  let sun = document.getElementById("sun");
+  const sun = document.getElementById("sun");
   sun.style.top = "30%";
 }
 
 function removeMoon() {
-  let moon = document.getElementById("moon");
+  const moon = document.getElementById("moon");
   moon.style.top = "70%";
 }
 
 function bringMoon() {
-  let moon = document.getElementById("moon");
+  const moon = document.getElementById("moon");
   moon.style.top = "30%";
 }
 
 function sunriseSunset() {
-  let sun = document.getElementById("sun");
+  const sun = document.getElementById("sun");
   sun.style.top = "60%";
 }
