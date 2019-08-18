@@ -13,6 +13,7 @@ html, body {
   user-select: none; /* Disable text highlighting */
   scroll-behavior: smooth;
   overscroll-behavior: none; /* Prevent scroll bounce at top/bottom of page */
+  background-image: url('../img/home/sky.jpg');
 }
 
 h1, h2, h3, h4, h5, h6, p {
