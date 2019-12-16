@@ -60,10 +60,13 @@ function connectAllDivs() {
     connectDivs(2, 'stanford-3', 'bridgewater');
     connectDivs(2, 'marker-26', 'cs198-3');
     connectDivs(2, 'marker-21', 'self-driving');
+    connectDivs(2, 'bridgewater', 'marker-25');
+    connectDivs(2, 'cs198-3', 'bridgewater');
   } else if (activeSlide === 3) {
     connectDivs(3, 'marker-30', 'stanford-4');
     connectDivs(3, 'stanford-4', 'bridgewater-2');
-    connectDivs(3, 'marker-36', 'cs198-4');
+    connectDivs(3, 'marker-30', 'cs198-4');
+    connectDivs(3, 'cs198-4', 'bridgewater-2');
   }
 }
 
