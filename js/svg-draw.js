@@ -126,7 +126,7 @@ function drawCurvedLine(slideIndex, x1, y1, x2, y2, color, tension) {
   const hy1 = y1;
   const hx2 = x2 - delta;
   const hy2 = y2;
-  const path = 'M ' + x1 + ' ' + y1 + ' C ' + hx1 + ' ' + hy1 + ' ' + hx2 + ' ' + hy2 + ' ' + x2 + ' ' + y2;
+  const path = `M ${x1} ${y1} C ${hx1} ${hy1} ${hx2} ${hy2} ${x2} ${y2}`;
 
   const namespace = 'http://www.w3.org/2000/svg';
   const shape = document.createElementNS(namespace, 'path');
