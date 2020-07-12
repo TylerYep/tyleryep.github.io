@@ -3,8 +3,7 @@
 /* --- Main --- */
 
 getTime(); // Set current background
-document.getElementById("body").classList.add('loaded'); // Remove loading screen
-
+document.getElementById("body").classList.add("loaded"); // Remove loading screen
 
 /* --- Event Listeners --- */
 
@@ -32,12 +31,11 @@ document.getElementById("nightbutton").addEventListener("click", () => {
   bringMoon();
 });
 
-
 /* --- Function Definitions --- */
 
 function getTime() {
   const currentTime = new Date().getHours();
-  if (currentTime >= 0 && currentTime < 5 || currentTime >= 19) {
+  if ((currentTime >= 0 && currentTime < 5) || currentTime >= 19) {
     changeBackground("night");
     bringMoon();
   } else if (currentTime >= 5 && currentTime < 8) {

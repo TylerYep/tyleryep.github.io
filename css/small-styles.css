@@ -24,7 +24,8 @@ header ul li {
   transition: color 0.3s linear;
 }
 
-.sun, .moon {
+.sun,
+.moon {
   left: 72%;
   width: 15%;
 }
@@ -46,7 +47,8 @@ header ul li {
   font-size: 2.5em;
 }
 
-.about-container, .modal {
+.about-container,
+.modal {
   top: 16%;
   border-radius: 0;
 }
@@ -59,7 +61,6 @@ header ul li {
   width: 100%;
   max-width: 100%;
   border-radius: 0;
-
 }
 
 .about .left p {

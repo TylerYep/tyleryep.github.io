@@ -14,7 +14,7 @@ header ul {
 }
 
 header ul li {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   line-height: 1em;
   color: black;
   font-size: 1.5em;
@@ -58,7 +58,7 @@ li a:hover:not(.active) {
 .home {
   height: 100%;
   width: 100%;
-  background-image: url('../img/home/sky.jpg');
+  background-image: url("../img/home/sky.jpg");
   background-position: center;
   background-size: cover;
   -webkit-transition: background-image 0.2s linear;
@@ -74,7 +74,8 @@ li a:hover:not(.active) {
   z-index: 3;
 }
 
-.sun, .moon {
+.sun,
+.moon {
   position: absolute;
   left: 75%;
   top: 70%;
@@ -216,8 +217,8 @@ li a:hover:not(.active) {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .loaded #loader-wrapper .loader-section.section-right {
@@ -225,8 +226,8 @@ li a:hover:not(.active) {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .loaded #loader {

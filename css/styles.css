@@ -4,7 +4,8 @@
     Overall HTML
 \* ------------------------------------------------------------------ */
 
-html, body {
+html,
+body {
   height: 100%;
   font-size: 100%;
   -webkit-user-select: none;
@@ -13,11 +14,17 @@ html, body {
   user-select: none; /* Disable text highlighting */
   scroll-behavior: smooth;
   overscroll-behavior: none; /* Prevent scroll bounce at top/bottom of page */
-  background-image: url('../img/home/sky.jpg');
+  background-image: url("../img/home/sky.jpg");
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  font-family: 'Ubuntu', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Ubuntu", sans-serif;
   position: relative;
   color: black;
   z-index: 5;
@@ -31,7 +38,7 @@ h1, h2, h3, h4, h5, h6, p {
 .about {
   height: 100%;
   width: 100%;
-  background-image: url('../img/about/earth-up.jpg');
+  background-image: url("../img/about/earth-up.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -105,7 +112,7 @@ h1, h2, h3, h4, h5, h6, p {
 .earth {
   height: 100%;
   width: 100%;
-  background-image: url('../img/about/earth-down.jpg');
+  background-image: url("../img/about/earth-down.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -121,7 +128,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .dot::after {
-    content: '';
+    content: "";
     display: block;
     width: 25px;
     height: 25px;
@@ -168,7 +175,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* --- Carousel --- */
 
-.carousel, .carousel-item, .carousel-inner, .active {
+.carousel,
+.carousel-item,
+.carousel-inner,
+.active {
   height: 100%;
 }
 
@@ -185,7 +195,8 @@ h1, h2, h3, h4, h5, h6, p {
   left: 0;
 }
 
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
   width: 11%;
 }
 
@@ -282,7 +293,8 @@ h1, h2, h3, h4, h5, h6, p {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 }
 
-.bubble p, .overlay {
+.bubble p,
+.overlay {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -303,8 +315,8 @@ h1, h2, h3, h4, h5, h6, p {
   width: 100%;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .overlay:hover {
@@ -313,7 +325,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .text {
   color: white;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-size: 1.5em;
   position: absolute;
   text-decoration: none;
@@ -422,7 +434,8 @@ h1, h2, h3, h4, h5, h6, p {
   font-weight: bold;
 }
 
-.close:hover, .close:focus {
+.close:hover,
+.close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
@@ -435,7 +448,7 @@ h1, h2, h3, h4, h5, h6, p {
 .contact {
   height: 100%;
   width: 100%;
-  background-image: url('../img/contact/black-gradient.jpg');
+  background-image: url("../img/contact/black-gradient.jpg");
   background-position: center;
   background-size: cover;
 }
