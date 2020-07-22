@@ -1,12 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import * as serviceWorker from "./serviceWorker";
 import Carousel from "react-bootstrap/Carousel";
 
 class Bubble extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
@@ -25,7 +22,7 @@ class Lane extends React.Component {
     return (
       <div className={this.props.top ? "lane top" : "lane"}>
         {this.props.bubbles.map((bubble) => (
-          <Bubble/>
+          <Bubble key={bubble}/>
         ))}
       </div>
     );
@@ -42,21 +39,20 @@ class ProjectCarousel extends React.Component {
 
   render() {
     return (
-      <Carousel id="project">
-          {this.state.slides.map(num => (
-            <Carousel.Item>
-              <h1>Projects</h1>
-              <img src="img/projects/stars.jpg" alt="stars"></img>
-              <Carousel.Caption>
-                <h2 className="year">201{num}</h2>
-                <Lane top bubbles={[1, 2]} />
-                <Lane bubbles={[3]} />
-                <Lane bubbles={[]} />
-                <Lane bubbles={[]} />
-              </Carousel.Caption>
-            </Carousel.Item>
-          ))}
-
+      <Carousel id="project" interval={null}>
+        {this.state.slides.map((num) => (
+          <Carousel.Item key={num}>
+            <h1>Projects</h1>
+            <img src="img/projects/stars.jpg" alt="stars"></img>
+            <Carousel.Caption>
+              <h2 className="year">201{num}</h2>
+              <Lane top bubbles={[1, 2]} />
+              <Lane bubbles={[3]} />
+              <Lane bubbles={[]} />
+              <Lane bubbles={[]} />
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
       </Carousel>
     );
   }
@@ -72,7 +68,7 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();
+serviceWorker.unregister();
 // TODO: re-enable cross origin checks in Safari
 
 /*
