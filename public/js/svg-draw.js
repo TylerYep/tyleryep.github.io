@@ -151,16 +151,19 @@ function connectDivs(
   color = "lightseagreen",
   tension = 0.6
 ) {
+  // Projects page is 3rd from the top
+  const distanceFromTop = 3 * document.body.clientHeight;
+  
   const left = document.getElementById(leftId);
   const right = document.getElementById(rightId);
 
   const leftPos = findAbsolutePosition(left);
   const x1 = leftPos.x;
-  const y1 = leftPos.y - 3 * document.body.clientHeight; // Projects page is 3rd from the top
+  const y1 = leftPos.y - distanceFromTop;
 
   const rightPos = findAbsolutePosition(right);
   const x2 = rightPos.x;
-  const y2 = rightPos.y - 3 * document.body.clientHeight; // Projects page is 3rd from the top
+  const y2 = rightPos.y - distanceFromTop;
 
   drawCurvedLine(slideIndex, x1, y1, x2, y2, color, tension);
 }

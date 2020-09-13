@@ -5,6 +5,7 @@ import Carousel from 'react-bootstrap/Carousel'
 
 import { carouselData } from './data'
 
+// TODO: add PropTypes
 const numMap = ['zero', 'one', 'two', 'three', 'four', 'five']
 
 function Marker(props) {
@@ -23,7 +24,7 @@ function Bubble(props) {
   return (
     <div id="stanford" className={`bubble ${numMap[props.index]}`}>
       <img src={`img/projects/${props.image}`} alt={props.text} />
-      <span className={`overlay ${props.color}`}>
+      <span className={`overlay ${props.overlay}`}>
       <p className="text">{props.text}</p>
       </span>
     </div>
@@ -44,7 +45,8 @@ function Lane(props) {
 
 function ProjectCarousel() {
   return (
-    <Carousel id="project" interval={null}>
+    // interval={null}
+    <Carousel id="project" interval={10000}>
       {carouselData.map((slide) => (
         <Carousel.Item key={slide.year}>
           <h1>Projects</h1>
