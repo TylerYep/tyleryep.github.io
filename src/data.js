@@ -4,6 +4,7 @@ export const carouselData = [
     lanes: [
       [
         {
+          id: "edutech",
           index: 2,
           image: 'edutech.jpg',
           overlay: 'green',
@@ -12,22 +13,26 @@ export const carouselData = [
       ],
       [
         {
+          id: 'stanford-1',
           index: 1,
           image: 'stanford.jpg',
           overlay: 'red',
           text: 'Stanford',
         },
         {
+          id: 'marker-1',
           index: 2,
           image: 'marker',
           text: 'Winter Quarter',
         },
         {
+          id: 'marker-2',
           index: 3,
           image: 'marker',
           text: 'Spring Quarter',
         },
         {
+          id: 'openproof',
           index: 4,
           image: 'openproof.jpg',
           overlay: 'green',
@@ -37,17 +42,27 @@ export const carouselData = [
       [],
       [
         {
+          id: 'cs198',
           index: 3,
           image: 'cs198.png',
           overlay: 'blue',
           text: 'CS 198',
         },
         {
+          id: 'marker-3',
           index: 4,
           image: 'marker',
           text: 'Summer Quarter',
         },
       ],
+    ],
+    connections: [
+      ["stanford-1", "openproof"],
+      ["stanford-1", "edutech"],
+      // ["marker-0", "stanford"],
+      // ["openproof", "marker-5"],
+      ["marker-1", "cs198"],
+      // ["cs198", "marker-6"],
     ],
   },
   {
@@ -107,6 +122,7 @@ export const carouselData = [
         },
       ],
     ],
+    connections: [],
   },
   {
     year: 2019,
@@ -158,6 +174,7 @@ export const carouselData = [
         },
       ],
     ],
+    connections: [],
   },
   {
     year: 2020,
@@ -202,5 +219,6 @@ export const carouselData = [
         },
       ],
     ],
+    connections: [],
   },
 ]

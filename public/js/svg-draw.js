@@ -153,7 +153,7 @@ function connectDivs(
 ) {
   // Projects page is 3rd from the top
   const distanceFromTop = 3 * document.body.clientHeight;
-  
+
   const left = document.getElementById(leftId);
   const right = document.getElementById(rightId);
 
