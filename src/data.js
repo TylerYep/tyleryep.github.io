@@ -5,7 +5,7 @@ const cs198 = {
   overlay: 'blue',
   text: 'CS198',
   modalText:
-    'I am a section leader for CS 106A and CS106B, the introductory CS courses at Stanford!',
+    'I was a section leader for CS 106A and CS106B, the introductory CS courses at Stanford!',
 }
 
 const stanford1 = {
