@@ -2,13 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './serviceWorker'
 import Carousel from 'react-bootstrap/Carousel'
+import Modal from 'react-bootstrap/Modal'
 
 import { carouselData } from './data'
-import { drawSVGLine, resetCanvases } from './drawing'
+import { drawSVGLine, resetCanvases } from './svg-draw'
 const numMap = ['zero', 'one', 'two', 'three', 'four', 'five']
 
-const Bubble = React.forwardRef((props, ref) => {
-  return props.image === 'marker' ? (
+const Bubble = React.forwardRef((props, ref) =>
+  props.image === 'marker' ? (
     <div
       id={`marker-${props.index}`}
       className={`marker ${numMap[props.index]}`}
@@ -18,27 +19,64 @@ const Bubble = React.forwardRef((props, ref) => {
       title={props.text}
     ></div>
   ) : (
-    <div id={props.image} className={`bubble ${numMap[props.index]}`} ref={ref}>
+    <div
+      id={props.image}
+      ref={ref}
+      className={`bubble ${numMap[props.index]}`}
+      onClick={props.openModal({ body: props.text })}
+    >
       <img src={`img/projects/${props.image}`} alt={props.text} />
       <span className={`overlay ${props.overlay}`}>
         <p className="text">{props.text}</p>
       </span>
     </div>
-  )
-})
+  ),
+)
 
 function Lane(props) {
   return (
     <div className={props.top ? 'lane top' : 'lane'}>
       {props.bubbles.map((bubble) => (
-        <Bubble key={bubble.id} ref={props.refs[bubble.id]} {...bubble} />
+        <Bubble
+          key={bubble.id}
+          ref={props.refs[bubble.id]}
+          openModal={props.openModal}
+          {...bubble}
+        />
       ))}
     </div>
   )
 }
 
+function ProjectModal(props) {
+  return (
+    <Modal
+      show={props.displayModal}
+      onHide={props.handleClose}
+      size="lg"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title>{props.modalContent.body}</Modal.Title>
+      </Modal.Header>
+
+      <Modal.Body>
+        <p>Modal body text goes here.</p>
+      </Modal.Body>
+    </Modal>
+  )
+}
+
 function ProjectCarousel(props) {
   const [slideIndex, setSlideIndex] = React.useState(0)
+  const [displayModal, setDisplayModal] = React.useState(false)
+  const [modalContent, setModalContent] = React.useState({})
+  const handleClose = () => setDisplayModal(false)
+  const openModal = (content) => () => {
+    setModalContent(content)
+    setDisplayModal(true)
+  }
+
   const [refs] = React.useState(() => {
     let refs = {}
     for (const carouselItemData of props.data) {
@@ -97,12 +135,23 @@ function ProjectCarousel(props) {
             <Carousel.Caption>
               <h2 className="year">{slide.year}</h2>
               {slide.lanes.map((lane, i) => (
-                <Lane refs={refs[slide.year]} key={i} top={i === 0} bubbles={lane} />
+                <Lane
+                  refs={refs[slide.year]}
+                  key={i}
+                  top={i === 0}
+                  bubbles={lane}
+                  openModal={openModal}
+                />
               ))}
             </Carousel.Caption>
           </Carousel.Item>
         ))}
       </Carousel>
+      <ProjectModal
+        displayModal={displayModal}
+        modalContent={modalContent}
+        handleClose={handleClose}
+      />
     </>
   )
 }
