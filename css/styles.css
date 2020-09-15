@@ -4,7 +4,8 @@
     Overall HTML
 \* ------------------------------------------------------------------ */
 
-html, body {
+html,
+body {
   height: 100%;
   font-size: 100%;
   -webkit-user-select: none;
@@ -13,10 +14,16 @@ html, body {
   user-select: none; /* Disable text highlighting */
   scroll-behavior: smooth;
   overscroll-behavior: none; /* Prevent scroll bounce at top/bottom of page */
-  background-image: url('../img/home/sky.jpg');
+  background-image: url('../img/home/stars.jpg');
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   font-family: 'Ubuntu', sans-serif;
   position: relative;
   color: black;
@@ -168,7 +175,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* --- Carousel --- */
 
-.carousel, .carousel-item, .carousel-inner, .active {
+.carousel,
+.carousel-item,
+.carousel-inner,
+.active {
   height: 100%;
 }
 
@@ -185,7 +195,8 @@ h1, h2, h3, h4, h5, h6, p {
   left: 0;
 }
 
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
   width: 11%;
 }
 
@@ -244,7 +255,48 @@ h1, h2, h3, h4, h5, h6, p {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  cursor: auto;
+}
+
+.marker::before {
+  position: absolute;
+  top: -40px;
+  left: -65px;
+  background-color: black;
+  border-radius: 5px;
+  color: #fff;
+  content: attr(data-tooltip);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 160px;
+}
+
+.marker::after {
+  position: absolute;
+  top: -12px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+  margin-left: -5px;
+  width: 0;
+}
+
+.marker::before,
+.marker::after {
+  color: #efefef;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+}
+
+.marker:hover::before,
+.marker:hover::after {
+  opacity: 1;
+  -webkit-transition: all 0.75s ease;
+  transition: all 0.75s ease;
 }
 
 /* Small screens */
@@ -279,10 +331,11 @@ h1, h2, h3, h4, h5, h6, p {
 
 .bubble:hover .overlay {
   opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';
 }
 
-.bubble p, .overlay {
+.bubble p,
+.overlay {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -302,9 +355,9 @@ h1, h2, h3, h4, h5, h6, p {
   height: 100%;
   width: 100%;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .overlay:hover {
@@ -355,77 +408,6 @@ h1, h2, h3, h4, h5, h6, p {
   left: 100%;
   height: 0;
   width: 0;
-}
-
-/* --- Modals --- */
-
-.project-modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 100;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black */
-  border-radius: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  top: 0;
-}
-
-.modal-content {
-  background-color: rgba(242, 242, 242, 0.9);
-  margin: 5% auto; /* 15% from the top and centered */
-  padding: 20px;
-  width: 86%;
-  height: 80%;
-}
-
-.modal-body {
-  height: 100%;
-  display: flex;
-  padding-top: 0;
-}
-
-.modal-left {
-  max-width: 30%;
-  max-height: 50%;
-  min-height: 400px;
-  margin-right: 40px;
-  position: relative;
-  -o-object-fit: cover;
-  object-fit: cover;
-  /* margin: auto; */
-  border: 5px solid white;
-  border-radius: 50%;
-}
-
-.modal-right {
-  flex-direction: column;
-  /* padding-left: 20%; */
-  /* padding-top: 0; */
-  /* padding-right: 20px; */
-  position: relative;
-  width: 80%;
-}
-
-.modal-body h2 {
-  color: black;
-  font-size: 2.5em;
-}
-
-.close {
-  color: #aaa;
-  text-align: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover, .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 /* ------------------------------------------------------------------ *\

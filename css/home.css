@@ -74,7 +74,8 @@ li a:hover:not(.active) {
   z-index: 3;
 }
 
-.sun, .moon {
+.sun,
+.moon {
   position: absolute;
   left: 75%;
   top: 70%;
@@ -141,7 +142,7 @@ li a:hover:not(.active) {
 }
 
 #loader:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 5px;
   left: 5px;
@@ -155,7 +156,7 @@ li a:hover:not(.active) {
 }
 
 #loader:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 15px;
   left: 15px;
@@ -213,25 +214,25 @@ li a:hover:not(.active) {
 
 .loaded #loader-wrapper .loader-section.section-left {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .loaded #loader-wrapper .loader-section.section-right {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .loaded #loader {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
