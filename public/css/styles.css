@@ -14,7 +14,7 @@ body {
   user-select: none; /* Disable text highlighting */
   scroll-behavior: smooth;
   overscroll-behavior: none; /* Prevent scroll bounce at top/bottom of page */
-  background-image: url("../img/home/stars.jpg");
+  background-image: url('../img/home/stars.jpg');
 }
 
 h1,
@@ -24,7 +24,7 @@ h4,
 h5,
 h6,
 p {
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   position: relative;
   color: black;
   z-index: 5;
@@ -38,7 +38,7 @@ p {
 .about {
   height: 100%;
   width: 100%;
-  background-image: url("../img/about/earth-up.jpg");
+  background-image: url('../img/about/earth-up.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -112,7 +112,7 @@ p {
 .earth {
   height: 100%;
   width: 100%;
-  background-image: url("../img/about/earth-down.jpg");
+  background-image: url('../img/about/earth-down.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -128,7 +128,7 @@ p {
   }
 
   .dot::after {
-    content: "";
+    content: '';
     display: block;
     width: 25px;
     height: 25px;
@@ -290,7 +290,7 @@ p {
 
 .bubble:hover .overlay {
   opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';
 }
 
 .bubble p,
@@ -314,7 +314,7 @@ p {
   height: 100%;
   width: 100%;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
@@ -325,7 +325,7 @@ p {
 
 .text {
   color: white;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 1.5em;
   position: absolute;
   text-decoration: none;
@@ -448,7 +448,7 @@ p {
 .contact {
   height: 100%;
   width: 100%;
-  background-image: url("../img/contact/black-gradient.jpg");
+  background-image: url('../img/contact/black-gradient.jpg');
   background-position: center;
   background-size: cover;
 }

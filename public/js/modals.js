@@ -5,8 +5,8 @@ let projects = document.getElementsByClassName('bubble')
 let modal = document.getElementById('project-modal')
 
 // When the user clicks on the button, open the modal
-function modalOnClick() {
-  zenscroll.to(document.getElementById('projects'))
+function modalOnClick(i) {
+  // zenscroll.to(document.getElementById('projects'))
   body.style.overflow = 'hidden'
 
   let contentId = projects[i].id
@@ -21,7 +21,7 @@ function modalOnClick() {
 }
 
 for (let i = 0; i < projects.length; i++) {
-  projects[i].onclick = modalOnClick
+  projects[i].onclick = modalOnClick(i)
 }
 
 // When the user clicks on <span> (x), close the modal

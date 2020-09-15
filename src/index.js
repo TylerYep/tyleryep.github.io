@@ -39,7 +39,6 @@ function Lane(props) {
 
 function ProjectCarousel(props) {
   const [slideIndex, setSlideIndex] = React.useState(0)
-
   const [refs] = React.useState(() => {
     let refs = {}
     for (const carouselItemData of props.data) {
@@ -79,7 +78,6 @@ function ProjectCarousel(props) {
     resetCanvases()
     const slide = props.data[slideIndex]
     const canvasDOM = document.getElementById(`svg-canvas-${slide.year}`)
-    console.log(canvasDOM)
     slide.connections.forEach(([start, end]) => {
       const slideRefs = refs[slide.year]
       if (!(start in slideRefs)) throw new Error(`Invalid carousel data id: ${start}`)
@@ -89,26 +87,33 @@ function ProjectCarousel(props) {
   })
 
   return (
-    <Carousel id="project" interval={null} onSlide={setSlideIndex}>
-      {props.data.map((slide) => (
-        <Carousel.Item key={slide.year}>
-          <h1>Projects</h1>
-          <svg id={`svg-canvas-${slide.year}`} className="svg-canvas"></svg>
-          <img src="img/home/stars.jpg" alt="stars"></img>
-          <Carousel.Caption>
-            <h2 className="year">{slide.year}</h2>
-            {slide.lanes.map((lane, i) => (
-              <Lane refs={refs[slide.year]} key={i} top={i === 0} bubbles={lane} />
-            ))}
-          </Carousel.Caption>
-        </Carousel.Item>
-      ))}
-    </Carousel>
+    <>
+      <h1>Projects</h1>
+      <Carousel id="project" interval={null} onSlide={setSlideIndex}>
+        {props.data.map((slide) => (
+          <Carousel.Item key={slide.year}>
+            <svg id={`svg-canvas-${slide.year}`} className="svg-canvas"></svg>
+            <img src="img/home/stars.jpg" alt="stars"></img>
+            <Carousel.Caption>
+              <h2 className="year">{slide.year}</h2>
+              {slide.lanes.map((lane, i) => (
+                <Lane refs={refs[slide.year]} key={i} top={i === 0} bubbles={lane} />
+              ))}
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </>
   )
 }
 
 // TODO: Add <React.StrictMode> here when react bootstrap is ready.
-ReactDOM.render(<ProjectCarousel data={carouselData} />, document.querySelector('#projects'))
+ReactDOM.render(
+  <>
+    <ProjectCarousel data={carouselData} />
+  </>,
+  document.querySelector('#projects'),
+)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
