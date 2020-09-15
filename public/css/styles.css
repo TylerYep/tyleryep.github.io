@@ -14,7 +14,7 @@ body {
   user-select: none; /* Disable text highlighting */
   scroll-behavior: smooth;
   overscroll-behavior: none; /* Prevent scroll bounce at top/bottom of page */
-  background-image: url("../img/home/sky.jpg");
+  background-image: url("../img/home/stars.jpg");
 }
 
 h1,

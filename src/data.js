@@ -44,6 +44,12 @@ export const carouselData = [
           overlay: 'green',
           text: 'Openproof',
         },
+        {
+          id: 'marker-3',
+          index: 5,
+          image: 'marker',
+          text: 'Summer Quarter',
+        },
       ],
       [],
       [
@@ -55,20 +61,26 @@ export const carouselData = [
           text: 'CS 198',
         },
         {
-          id: 'marker-3',
+          id: 'marker-4',
           index: 4,
           image: 'marker',
           text: 'Summer Quarter',
+        },
+        {
+          id: 'marker-5',
+          index: 5,
+          image: 'marker',
+          text: '',
         },
       ],
     ],
     connections: [
       ["stanford-1", "openproof"],
       ["stanford-1", "edutech"],
-      // ["marker-0", "stanford"],
-      // ["openproof", "marker-5"],
+      ["marker-0", "stanford-1"],
+      ["openproof", "marker-3"],
       ["marker-1", "cs198"],
-      // ["cs198", "marker-6"],
+      ["cs198", "marker-5"],
     ],
   },
   {
