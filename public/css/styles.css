@@ -255,7 +255,48 @@ p {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  cursor: auto;
+}
+
+.marker::before {
+  position: absolute;
+  top: -40px;
+  left: -65px;
+  background-color: black;
+  border-radius: 5px;
+  color: #fff;
+  content: attr(data-tooltip);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 160px;
+}
+
+.marker::after {
+  position: absolute;
+  top: -12px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+  margin-left: -5px;
+  width: 0;
+}
+
+.marker::before,
+.marker::after {
+  color: #efefef;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+}
+
+.marker:hover::before,
+.marker:hover::after {
+  opacity: 1;
+  -webkit-transition: all 0.75s ease;
+  transition: all 0.75s ease;
 }
 
 /* Small screens */

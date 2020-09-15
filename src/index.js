@@ -14,16 +14,15 @@ const Bubble = React.forwardRef((props, ref) =>
       id={`marker-${props.index}`}
       className={`marker ${numMap[props.index]}`}
       ref={ref}
-      data-toggle="tooltip"
-      data-placement="top"
       title={props.text}
+      data-tooltip={props.text}
     ></div>
   ) : (
     <div
       id={props.image}
       ref={ref}
       className={`bubble ${numMap[props.index]}`}
-      onClick={props.openModal({ body: props.text })}
+      onClick={props.openModal({ title: props.text, body: props.modalText })}
     >
       <img src={`img/projects/${props.image}`} alt={props.text} />
       <span className={`overlay ${props.overlay}`}>
@@ -50,18 +49,13 @@ function Lane(props) {
 
 function ProjectModal(props) {
   return (
-    <Modal
-      show={props.displayModal}
-      onHide={props.handleClose}
-      size="lg"
-      centered
-    >
+    <Modal show={props.displayModal} onHide={props.handleClose} size="lg" centered>
       <Modal.Header closeButton>
-        <Modal.Title>{props.modalContent.body}</Modal.Title>
+        <Modal.Title>{props.modalContent.title}</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
-        <p>Modal body text goes here.</p>
+        <p>{props.modalContent.body}</p>
       </Modal.Body>
     </Modal>
   )
