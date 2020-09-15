@@ -112,6 +112,13 @@ function ProjectCarousel(props) {
       slide.textContent = ''
     }
 
+    for (const arrow of [
+      ...document.getElementsByClassName('carousel-control-prev'),
+      ...document.getElementsByClassName('carousel-control-next'),
+    ]) {
+      arrow.href = '#projects'
+    }
+
     // Draw new SVG elements
     const slide = props.data[slideIndex]
     const canvasDOM = document.getElementById(`svg-canvas-${slide.year}`)
