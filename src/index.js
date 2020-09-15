@@ -5,7 +5,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import Modal from 'react-bootstrap/Modal'
 
 import { carouselData } from './data'
-import { drawSVGLine, resetCanvases } from './svg-draw'
+import { drawSVGLine } from './svg-draw'
 const numMap = ['zero', 'one', 'two', 'three', 'four', 'five']
 
 const Bubble = React.forwardRef((props, ref) =>
@@ -107,13 +107,20 @@ function ProjectCarousel(props) {
 
   // code to run after render goes here
   React.useEffect(() => {
-    resetCanvases()
+    // Remove all SVG elements
+    for (const slide of document.getElementsByClassName('svg-canvas')) {
+      slide.textContent = ''
+    }
+
+    // Draw new SVG elements
     const slide = props.data[slideIndex]
     const canvasDOM = document.getElementById(`svg-canvas-${slide.year}`)
+    slide.textContent = ''
     slide.connections.forEach(([start, end]) => {
       const slideRefs = refs[slide.year]
-      if (!(start in slideRefs)) throw new Error(`Invalid carousel data id: ${start}`)
-      if (!(end in slideRefs)) throw new Error(`Invalid carousel data id: ${end}`)
+      for (const elem of [start, end]) {
+        if (!(elem in slideRefs)) throw new Error(`Invalid carousel data id: ${elem}`)
+      }
       canvasDOM.appendChild(drawSVGLine(slideRefs[start], slideRefs[end], dimensions))
     })
   })
@@ -161,4 +168,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister()
+serviceWorker.register()

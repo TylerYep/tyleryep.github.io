@@ -13,7 +13,7 @@ export function drawSVGLine(
       x += el.offsetLeft
       y += el.offsetTop
     }
-    return { x: x, y: y }
+    return { x, y }
   }
   const leftPos = findAbsolutePosition(leftRef.current)
   const rightPos = findAbsolutePosition(rightRef.current)
@@ -40,14 +40,4 @@ export function drawSVGLine(
   shape.setAttribute('style', 'fill: none;')
   shape.setAttribute('stroke-width', strokeWidth)
   return shape
-}
-
-export function resetCanvases() {
-  const carouselSlides = document.getElementsByClassName('carousel-item')
-  for (let i = 0; i < carouselSlides.length; i++) {
-    const svg = carouselSlides[i].getElementsByClassName('svg-canvas')[0]
-    while (svg.firstChild) {
-      svg.removeChild(svg.firstChild)
-    }
-  }
 }
