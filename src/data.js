@@ -4,7 +4,7 @@ export const carouselData = [
     lanes: [
       [
         {
-          id: "edutech",
+          id: 'edutech',
           index: 2,
           image: 'edutech.jpg',
           overlay: 'green',
@@ -75,12 +75,12 @@ export const carouselData = [
       ],
     ],
     connections: [
-      ["stanford-1", "openproof"],
-      ["stanford-1", "edutech"],
-      ["marker-0", "stanford-1"],
-      ["openproof", "marker-3"],
-      ["marker-1", "cs198"],
-      ["cs198", "marker-5"],
+      ['stanford-1', 'openproof'],
+      ['stanford-1', 'edutech'],
+      ['marker-0', 'stanford-1'],
+      ['openproof', 'marker-3'],
+      ['marker-1', 'cs198'],
+      ['cs198', 'marker-5'],
     ],
   },
   {
@@ -97,6 +97,12 @@ export const carouselData = [
       ],
       [
         {
+          id: 'marker-0',
+          index: 0,
+          image: 'marker',
+          text: '',
+        },
+        {
           id: 'stanford-2',
           index: 1,
           image: 'stanford2.jpg',
@@ -104,31 +110,41 @@ export const carouselData = [
           text: 'Stanford',
         },
         {
-          id: 'marker',
+          id: 'marker-1',
           index: 2,
           image: 'marker',
           text: 'Winter Quarter',
         },
         {
+          id: 'marker-2',
           index: 3,
           image: 'marker',
           text: 'Spring Quarter',
         },
         {
+          id: 'intuit',
           index: 4,
           image: 'intuit.png',
           overlay: 'blue',
           text: 'Intuit',
         },
+        {
+          id: 'marker-3',
+          index: 5,
+          image: 'marker',
+          text: '',
+        },
       ],
       [
         {
+          id: 'vhil',
           index: 2,
           image: 'vhil.jpg',
           overlay: 'red',
-          text: 'EduTech',
+          text: 'VHIL',
         },
         {
+          id: 'marker-4',
           index: 3,
           image: 'marker',
           text: 'Spring Quarter',
@@ -136,21 +152,45 @@ export const carouselData = [
       ],
       [
         {
+          id: 'marker-5',
+          index: 0,
+          image: 'marker',
+          text: '',
+        },
+        {
+          id: 'cs198',
           index: 2,
           image: 'cs198.png',
           overlay: 'blue',
           text: 'CS 198',
         },
+        {
+          id: 'marker-6',
+          index: 5,
+          image: 'marker',
+          text: '',
+        },
       ],
     ],
-    connections: [],
+    connections: [
+      ['marker-0', 'stanford-2'],
+      ['stanford-2', 'intuit'],
+      ['intuit', 'marker-3'],
+      ['stanford-2', 'vhil'],
+      ['vhil', 'marker-4'],
+      ['marker-4', 'intuit'],
+      ['marker-1', 'wolfbot'],
+      ['marker-5', 'cs198'],
+      ['cs198', 'marker-6'],
+    ],
   },
   {
     year: 2019,
     lanes: [
       [
         {
-          index: 2,
+          id: 'self-driving',
+          index: 3,
           image: 'self-driving.png',
           overlay: 'green',
           text: 'Self-Driving',
@@ -158,36 +198,60 @@ export const carouselData = [
       ],
       [
         {
+          id: 'marker-0',
+          index: 0,
+          image: 'marker',
+          text: '',
+        },
+        {
+          id: 'stanford-1',
           index: 1,
           image: 'stanford.jpg',
           overlay: 'red',
           text: 'Stanford',
         },
         {
+          id: 'marker-1',
           index: 2,
           image: 'marker',
           text: 'Winter Quarter',
         },
         {
+          id: 'marker-2',
           index: 3,
           image: 'marker',
           text: 'Spring Quarter',
         },
         {
+          id: 'bridgewater',
           index: 4,
           image: 'bridgewater.png',
           overlay: 'red',
           text: 'Bridgewater',
         },
+        {
+          id: 'marker-3',
+          index: 5,
+          image: 'marker',
+          text: '',
+        },
       ],
       [],
       [
         {
+          id: 'marker-4',
+          index: 0,
+          image: 'marker',
+          text: '',
+        },
+        {
+          id: 'marker-5',
           index: 1,
           image: 'marker',
           text: 'Fall Quarter',
         },
         {
+          id: 'cs198',
           index: 2,
           image: 'cs198.png',
           overlay: 'blue',
@@ -195,7 +259,14 @@ export const carouselData = [
         },
       ],
     ],
-    connections: [],
+    connections: [
+      ['marker-0', 'stanford-1'],
+      ['stanford-1', 'bridgewater'],
+      ['marker-4', 'cs198'],
+      ['marker-1', 'self-driving'],
+      ['bridgewater', 'marker-3'],
+      ['cs198', 'bridgewater'],
+    ],
   },
   {
     year: 2020,
@@ -203,36 +274,54 @@ export const carouselData = [
       [],
       [
         {
+          id: 'marker-0',
+          index: 0,
+          image: 'marker',
+          text: '',
+        },
+        {
+          id: 'stanford-1',
           index: 1,
           image: 'stanford.jpg',
           overlay: 'red',
           text: 'Stanford',
         },
         {
+          id: 'marker-1',
           index: 2,
           image: 'marker',
           text: 'Winter Quarter',
         },
         {
+          id: 'marker-2',
           index: 3,
           image: 'marker',
           text: 'Spring Quarter',
         },
         {
+          id: 'robinhood',
           index: 4,
-          image: 'openproof.jpg',
+          image: 'robinhood.png',
           overlay: 'green',
-          text: 'Stanford',
+          text: 'Robinhood',
+        },
+        {
+          id: 'marker-3',
+          index: 5,
+          image: 'marker',
+          text: '',
         },
       ],
       [],
       [
         {
+          id: 'marker-4',
           index: 1,
           image: 'marker',
           text: 'Fall Quarter',
         },
         {
+          id: 'cs198',
           index: 2,
           image: 'cs198.png',
           overlay: 'blue',
@@ -240,6 +329,11 @@ export const carouselData = [
         },
       ],
     ],
-    connections: [],
+    connections: [
+      ['marker-0', 'stanford-1'],
+      ['stanford-1', 'robinhood'],
+      ['marker-0', 'cs198'],
+      ['cs198', 'robinhood'],
+    ],
   },
 ]

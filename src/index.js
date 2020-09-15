@@ -28,25 +28,26 @@ const Bubble = React.forwardRef((props, ref) => {
 })
 
 function Lane(props) {
-  const { refs } = props
   return (
     <div className={props.top ? 'lane top' : 'lane'}>
       {props.bubbles.map((bubble) => (
-        <Bubble key={bubble.index} ref={refs[bubble.id]} {...bubble} />
+        <Bubble key={bubble.id} ref={props.refs[bubble.id]} {...bubble} />
       ))}
     </div>
   )
 }
 
 function ProjectCarousel(props) {
+  const [slideIndex, setSlideIndex] = React.useState(0)
+
   const [refs] = React.useState(() => {
     let refs = {}
     for (const carouselItemData of props.data) {
       refs[carouselItemData.year] = {}
       for (const laneArr of carouselItemData.lanes) {
         for (const lane of laneArr) {
-          // if (lane.id === undefined)
-          //   throw new Error(`Undefined carousel data id: ${JSON.stringify(lane)}`)
+          if (lane.id === undefined)
+            throw new Error(`Undefined carousel data id: ${JSON.stringify(lane)}`)
           if (lane.id in refs[carouselItemData.year])
             throw new Error(`Duplicate carousel data id: ${lane.id}`)
           refs[carouselItemData.year][lane.id] = React.createRef()
@@ -76,8 +77,9 @@ function ProjectCarousel(props) {
   // code to run after render goes here
   React.useEffect(() => {
     resetCanvases()
-    const slide = props.data[0]
+    const slide = props.data[slideIndex]
     const canvasDOM = document.getElementById(`svg-canvas-${slide.year}`)
+    console.log(canvasDOM)
     slide.connections.forEach(([start, end]) => {
       const slideRefs = refs[slide.year]
       if (!(start in slideRefs)) throw new Error(`Invalid carousel data id: ${start}`)
@@ -87,7 +89,7 @@ function ProjectCarousel(props) {
   })
 
   return (
-    <Carousel id="project" interval={null}>
+    <Carousel id="project" interval={null} onSlide={setSlideIndex}>
       {props.data.map((slide) => (
         <Carousel.Item key={slide.year}>
           <h1>Projects</h1>
