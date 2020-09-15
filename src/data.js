@@ -13,6 +13,12 @@ export const carouselData = [
       ],
       [
         {
+          id: 'marker-0',
+          index: 0,
+          image: 'marker',
+          text: '',
+        },
+        {
           id: 'stanford-1',
           index: 1,
           image: 'stanford.jpg',
@@ -70,6 +76,7 @@ export const carouselData = [
     lanes: [
       [
         {
+          id: 'wolfbot',
           index: 3,
           image: 'wolfbot.jpg',
           overlay: 'yellow',
@@ -78,12 +85,14 @@ export const carouselData = [
       ],
       [
         {
+          id: 'stanford-2',
           index: 1,
           image: 'stanford2.jpg',
           overlay: 'red',
           text: 'Stanford',
         },
         {
+          id: 'marker',
           index: 2,
           image: 'marker',
           text: 'Winter Quarter',
