@@ -4,33 +4,40 @@ import * as serviceWorker from './serviceWorker'
 import Carousel from 'react-bootstrap/Carousel'
 import Modal from 'react-bootstrap/Modal'
 
-import { carouselData } from './data'
+import { carouselData } from './x'
 import { drawSVGLine } from './svg-draw'
-const numMap = ['zero', 'one', 'two', 'three', 'four', 'five']
 
-const Bubble = React.forwardRef((props, ref) =>
-  props.image === 'marker' ? (
+const Bubble = React.forwardRef((props, ref) => {
+  const shouldDisplay = props.index === 0 || props.index === props.dimensions.maxWidth ? 0 : ''
+  const styles = {
+    left: `${(props.index / props.dimensions.maxWidth * 100)}%`,
+    height: shouldDisplay,
+    width: shouldDisplay,
+  }
+  return props.image === 'marker' ? (
     <div
       id={`marker-${props.index}`}
-      className={`marker ${numMap[props.index]}`}
+      className="marker"
       ref={ref}
       title={props.text}
       data-tooltip={props.text}
+      style={styles}
     ></div>
   ) : (
     <div
       id={props.image}
       ref={ref}
-      className={`bubble ${numMap[props.index]}`}
+      className="bubble"
       onClick={props.openModal({ title: props.text, body: props.modalText })}
+      style={styles}
     >
       <img src={`img/projects/${props.image}`} alt={props.text} />
       <span className={`overlay ${props.overlay}`}>
         <p className="text">{props.text}</p>
       </span>
     </div>
-  ),
-)
+  )
+})
 
 function Lane(props) {
   return (
@@ -40,6 +47,7 @@ function Lane(props) {
           key={bubble.id}
           ref={props.refs[bubble.id]}
           openModal={props.openModal}
+          dimensions={props.dimensions}
           {...bubble}
         />
       ))}
@@ -53,7 +61,6 @@ function ProjectModal(props) {
       <Modal.Header closeButton>
         <Modal.Title>{props.modalContent.title}</Modal.Title>
       </Modal.Header>
-
       <Modal.Body>
         <p>{props.modalContent.body}</p>
       </Modal.Body>
@@ -88,13 +95,13 @@ function ProjectCarousel(props) {
     return refs
   })
 
-  const [dimensions, setDimensions] = React.useState({
+  const [windowDimensions, setWindowDimensions] = React.useState({
     height: window.innerHeight,
     width: window.innerWidth,
   })
   React.useEffect(() => {
     function handleResize() {
-      setDimensions({
+      setWindowDimensions({
         height: window.innerHeight,
         width: window.innerWidth,
       })
@@ -128,9 +135,24 @@ function ProjectCarousel(props) {
       for (const elem of [start, end]) {
         if (!(elem in slideRefs)) throw new Error(`Invalid carousel data id: ${elem}`)
       }
-      canvasDOM.appendChild(drawSVGLine(slideRefs[start], slideRefs[end], dimensions))
+      canvasDOM.appendChild(drawSVGLine(slideRefs[start], slideRefs[end], windowDimensions))
     })
   })
+
+  const dimensions = {}
+  for (const carouselItemData of props.data) {
+    dimensions[carouselItemData.year] = {
+      maxHeight: carouselItemData.lanes.length,
+      maxWidth: 0,
+    }
+    for (const arr of carouselItemData.lanes) {
+      for (const bubble of arr) {
+        if (bubble.index > dimensions[carouselItemData.year].maxWidth) {
+          dimensions[carouselItemData.year].maxWidth = bubble.index
+        }
+      }
+    }
+  }
 
   return (
     <>
@@ -149,6 +171,7 @@ function ProjectCarousel(props) {
                   top={i === 0}
                   bubbles={lane}
                   openModal={openModal}
+                  dimensions={dimensions[slide.year]}
                 />
               ))}
             </Carousel.Caption>
