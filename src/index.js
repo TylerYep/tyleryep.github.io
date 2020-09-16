@@ -4,13 +4,13 @@ import * as serviceWorker from './serviceWorker'
 import Carousel from 'react-bootstrap/Carousel'
 import Modal from 'react-bootstrap/Modal'
 
-import { carouselData } from './x'
+import { carouselData } from './data'
 import { drawSVGLine } from './svg-draw'
 
 const Bubble = React.forwardRef((props, ref) => {
   const shouldDisplay = props.index === 0 || props.index === props.dimensions.maxWidth ? 0 : ''
   const styles = {
-    left: `${(props.index / props.dimensions.maxWidth * 100)}%`,
+    left: `${(props.index / props.dimensions.maxWidth) * 100}%`,
     height: shouldDisplay,
     width: shouldDisplay,
   }
@@ -40,8 +40,11 @@ const Bubble = React.forwardRef((props, ref) => {
 })
 
 function Lane(props) {
+  const styles = {
+    height: `${100 / props.dimensions.maxHeight}%`,
+  }
   return (
-    <div className={props.top ? 'lane top' : 'lane'}>
+    <div className={props.top ? 'lane top' : 'lane'} style={styles}>
       {props.bubbles.map((bubble) => (
         <Bubble
           key={bubble.id}
@@ -198,4 +201,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register()
+serviceWorker.unregister()
