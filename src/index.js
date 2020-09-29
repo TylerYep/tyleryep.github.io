@@ -4,11 +4,16 @@ import * as serviceWorker from './serviceWorker'
 import Carousel from 'react-bootstrap/Carousel'
 import Modal from 'react-bootstrap/Modal'
 
-import { carouselData } from './data'
+import { carouselData } from './dataOne'
 import { drawSVGLine } from './svg-draw'
 
 const Bubble = React.forwardRef((props, ref) => {
-  const shouldDisplay = props.index === 0 || props.index === props.dimensions.maxWidth ? 0 : ''
+  const shouldDisplay =
+    (props.showMarkers || props.image !== 'marker') &&
+    props.index > 0 &&
+    props.index < props.dimensions.maxWidth
+      ? ''
+      : 0
   const styles = {
     left: `${(props.index / props.dimensions.maxWidth) * 100}%`,
     height: shouldDisplay,
@@ -41,7 +46,7 @@ const Bubble = React.forwardRef((props, ref) => {
 
 function Lane(props) {
   const styles = {
-    height: `${100 / props.dimensions.maxHeight}%`,
+    height: `${95 / props.dimensions.maxHeight}%`,
   }
   return (
     <div className={props.top ? 'lane top' : 'lane'} style={styles}>
@@ -51,6 +56,7 @@ function Lane(props) {
           ref={props.refs[bubble.id]}
           openModal={props.openModal}
           dimensions={props.dimensions}
+          showMarkers={props.dimensions.maxWidth < 5}
           {...bubble}
         />
       ))}
