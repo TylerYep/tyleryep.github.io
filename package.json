@@ -20,11 +20,13 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build"
+    "deploy": "gh-pages -b main -d build",
+    "lint": "npx eslint public src"
   },
   "pre-push": "deploy",
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "ignorePatterns": "zenscroll-min.js"
   },
   "browserslist": {
     "production": [
