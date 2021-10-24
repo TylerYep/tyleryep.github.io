@@ -37,7 +37,7 @@ export function drawSVGLine(
   shape.setAttribute('d', path)
   shape.setAttribute('stroke', strokeColor)
   shape.setAttribute('class', 'path')
-  shape.setAttribute('style', 'fill: none;')
+  // shape.setAttribute('style', 'fill: none;')
   shape.setAttribute('stroke-width', strokeWidth)
   return shape
 }
