@@ -196,11 +196,10 @@ function ProjectCarousel(props) {
   )
 }
 
-// TODO: Add <React.StrictMode> here when react bootstrap is ready.
 ReactDOM.render(
-  <>
+  <React.StrictMode>
     <ProjectCarousel data={carouselData} />
-  </>,
+  </React.StrictMode>,
   document.querySelector('#projects'),
 )
 
