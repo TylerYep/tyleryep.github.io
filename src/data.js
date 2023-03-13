@@ -307,7 +307,7 @@ export const carouselData = [
           overlay: 'green',
           text: 'Robinhood',
           modalText:
-            'For the summer of my Senior year, I interned at Robinhood using the COVID-19 pandemic. Over the summer, I designed a new checkout flow backend API to place trades via ACH transfer on the Robinhood app, implemented the backend API in the Django backend and the frontend in the web app using React/Redux, and then integrated with Bonfire, a unified HTTP proxy layer.',
+            'For the summer of my Senior year, I interned at Robinhood during the COVID-19 pandemic. Over the summer, I designed a new checkout flow backend API to place trades via ACH transfer on the Robinhood app, implemented the backend API in the Django backend and the frontend in the web app using React/Redux, and then integrated with Bonfire, a unified HTTP proxy layer.',
         },
         {
           id: 'marker-3',

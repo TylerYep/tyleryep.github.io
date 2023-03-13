@@ -4,7 +4,7 @@ const LANE_MAX = 4
 const SLIDE_BREAK = 2
 const carouselData = [
   {year: "2016 - 2018", lanes: [[], [], [], []], connections: []},
-  {year: "2018 - 2020", lanes: [[], [], [], []], connections: []},
+  {year: "2018 - 2023", lanes: [[], [], [], []], connections: []},
 ]
 for (const [slide, carouselItemData] of oldCarouselData.entries()) {
   const addToSlide = slide < SLIDE_BREAK ? 0 : 1
